@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Noto+Serif+Myanmar:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -32,7 +32,7 @@
               safety: { 600: "#2D6A4F", 700: "#1B4D3E" },
             },
             fontFamily: {
-              mm: ["Noto Sans Myanmar", "Noto Serif Myanmar", "Padauk", "sans-serif"],
+              mm: ["Pyidaungsu", "Padauk", "Noto Sans Myanmar", "sans-serif"],
               en: ["Inter", "sans-serif"],
             },
           },
@@ -176,6 +176,13 @@
               အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
             </h1>
           </div>
+          <img
+            class="site-logo site-logo-m"
+            src="assets/m_logo.ico"
+            alt="Ministry Logo"
+            width="108"
+            height="108"
+          />
         </div>
         <button
           type="button"
@@ -568,20 +575,23 @@
                     </li>
                   </ol>
                 </article>
-                <article class="about-block">
-                  <h3 data-i18n="org.head">ဖွဲ့စည်းပုံ</h3>
+                <article class="about-block about-block-org">
                   <div class="org-chart" aria-label="ဦးစီးဌာန ဖွဲ့စည်းပုံ">
-                    <div class="org-node org-node-top" data-i18n="org.dg">ညွှန်ကြားရေးမှူးချုပ်</div>
-                    <div class="org-branch" aria-hidden="true"></div>
-                    <div class="org-row">
-                      <div class="org-node" data-i18n="org.ddg">ဒုတိယညွှန်ကြားရေးမှူးချုပ်</div>
-                      <div class="org-node" data-i18n="org.dir">ညွှန်ကြားရေးမှူး (စီမံ)</div>
+                    <div class="org-chart-head">
+                      <p class="org-chart-dept mm-title" data-i18n="org.dept">
+                        အလုပ်ရုံနှင့်အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
+                      </p>
+                      <h3 class="org-chart-title mm-subtitle" data-i18n="org.head">ဖွဲ့စည်းပုံ</h3>
                     </div>
-                    <div class="org-branch org-branch-wide" aria-hidden="true"></div>
-                    <div class="org-row org-row-3">
-                      <div class="org-node org-node-sm" data-i18n="org.insp">စစ်ဆေးရေး</div>
-                      <div class="org-node org-node-sm" data-i18n="org.osh">OSH</div>
-                      <div class="org-node org-node-sm" data-i18n="org.offices">တိုင်း/ပြည်နယ် ရုံးများ</div>
+                    <div class="org-chart-scroll">
+                      <img
+                        class="org-chart-img"
+                        src="assets/org-chart.png"
+                        alt="ညွှန်ကြားရေးမှူးချုပ် → ဒုတိယညွှန်ကြားရေးမှူးချုပ် → စီမံရေးရာ / အလုပ်သမားဥပဒေစစ်ဆေးရေး / အလုပ်ရုံစစ်ဆေးရေး ဌာနခွဲများနှင့် တိုင်းပြည်နယ်ရုံးများ"
+                        width="2000"
+                        height="1545"
+                        loading="lazy"
+                      />
                     </div>
                   </div>
                 </article>

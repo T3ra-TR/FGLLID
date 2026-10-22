@@ -5,10 +5,27 @@
   --line: #c5d6ea;
   --muted: #64748b;
 }
+@font-face {
+  font-family: "Pyidaungsu";
+  src: local("Pyidaungsu"), local("Pyidaungsu Regular"),
+    url("assets/fonts/Pyidaungsu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pyidaungsu";
+  src: local("Pyidaungsu Bold"),
+    url("assets/fonts/Pyidaungsu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: "Noto Sans Myanmar", "Noto Serif Myanmar", Padauk, sans-serif;
+  font-family: "Pyidaungsu", Padauk, "Noto Sans Myanmar", sans-serif;
+  font-size: 13px;
   line-height: 1.7;
   background: #f1f5f9;
   color: var(--deep);
