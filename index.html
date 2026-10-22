@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="my" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="အလုပ်ရုံနှင့်အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန — အလုပ်သမားဝန်ကြီးဌာန"
+    />
+    <title>အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန | FGLLID</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Padauk:wght@400;700&family=Noto+Sans+Myanmar:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: { 800: "#2563EB", 900: "#1E40AF", 950: "#1E3A8A" },
+              gold: { 400: "#FFD700", 500: "#E5A93C", 600: "#D4AF37" },
+              safety: { 600: "#2D6A4F", 700: "#1B4D3E" },
+            },
+            fontFamily: {
+              mm: ["Padauk", "Noto Sans Myanmar", "sans-serif"],
+              en: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="text-slate-800 antialiased flex flex-col min-h-screen">
+    <!-- Top Emergency Header -->
+    <div class="top-utility bg-navy-950 text-white text-xs sm:text-sm py-2 px-4 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto topbar-row flex flex-nowrap justify-between items-center gap-2 relative">
+        <div class="topbar-cluster flex items-center flex-nowrap gap-x-2 gap-y-1 min-w-0">
+          <a
+            href="tel:0673430184"
+            class="topbar-phone shrink-0 text-[11px] sm:text-sm"
+            >၀၆၇-၃၄၃၀၁၈၄</a
+          >
+        </div>
+        <div class="topbar-actions flex items-center gap-1.5 sm:gap-2.5 shrink-0 ml-auto">
+          <span id="live-time" class="topbar-time text-xs hidden md:inline"></span>
+
+          <a href="tel:1811" class="hotline-card shrink-0" aria-label="ဟော့လိုင်း ၁၈၁၁">
+            <span class="hotline-card-glow" aria-hidden="true"></span>
+            <span class="hotline-card-ico" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <span class="hotline-card-meta">
+              <span class="hotline-card-label" data-i18n="top.hotline">ဟော့လိုင်း</span>
+              <span class="hotline-card-num">1811</span>
+            </span>
+          </a>
+
+          <div class="topbar-noti-wrap">
+            <button
+              type="button"
+              id="noti-btn"
+              class="topbar-icon-btn"
+              aria-label="အသိပေးချက်များ"
+              aria-expanded="false"
+              aria-controls="noti-panel"
+              data-i18n-aria="noti.aria"
+            >
+              <i class="fa-solid fa-bell" aria-hidden="true"></i>
+              <span class="topbar-noti-dot" id="noti-dot" aria-hidden="true"></span>
+            </button>
+            <div class="noti-panel" id="noti-panel" hidden role="dialog" aria-labelledby="noti-title">
+              <div class="noti-panel-glow" aria-hidden="true"></div>
+              <div class="noti-panel-head">
+                <h3 id="noti-title" data-i18n="noti.title">အသိပေးချက်များ</h3>
+                <button type="button" class="noti-mark" id="noti-mark" data-i18n="noti.markRead">ဖတ်ပြီး</button>
+              </div>
+              <ul class="noti-list" id="noti-list">
+                <li class="noti-item is-unread" data-noti="1">
+                  <span class="noti-ico" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></span>
+                  <div>
+                    <strong data-i18n="noti.1.title">ဟော့လိုင်း ၁၈၁၁</strong>
+                    <p data-i18n="noti.1.body">အလုပ်သမားရေးရာ တိုင်ကြားမှုများကို ၂၄ နာရီ လက်ခံပါသည်။</p>
+                    <time data-i18n="noti.1.time">ယနေ့</time>
+                  </div>
+                </li>
+                <li class="noti-item is-unread" data-noti="2">
+                  <span class="noti-ico" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
+                  <div>
+                    <strong data-i18n="noti.2.title">OSH အသိပညာပေး</strong>
+                    <p data-i18n="noti.2.body">လုပ်ငန်းခွင် ဘေးကင်းရေး ဗီဒီယိုအသစ်များကို ကြည့်ရှုနိုင်ပါသည်။</p>
+                    <time data-i18n="noti.2.time">၂ ရက်ကြာ</time>
+                  </div>
+                </li>
+                <li class="noti-item" data-noti="3">
+                  <span class="noti-ico" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
+                  <div>
+                    <strong data-i18n="noti.3.title">သတင်း ထုတ်ပြန်ချက်</strong>
+                    <p data-i18n="noti.3.body">FGLLID တရားဝင် သတင်းများကို အောက်တွင် ဖတ်ရှုနိုင်ပါသည်။</p>
+                    <time data-i18n="noti.3.time">၅ ရက်ကြာ</time>
+                  </div>
+                </li>
+              </ul>
+              <a class="noti-footer" href="#news" data-i18n="noti.viewAll">သတင်းအားလုံးကြည့်ရန် ›</a>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="theme-btn"
+            class="topbar-icon-btn"
+            aria-label="အမှောင်မုဒ်"
+            data-i18n-aria="theme.aria"
+          >
+            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+          </button>
+
+          <button
+            type="button"
+            id="lang-btn"
+            class="flex items-center space-x-1"
+            aria-label="ဘာသာစကား ပြောင်းရန်"
+            data-i18n-aria="lang.aria"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+            </svg>
+            <span id="lang-btn-text" class="text-xs font-semibold" data-i18n="lang.switchTo">English</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo bar + nav under it -->
+    <header class="sticky top-0 z-40 site-header-wrap">
+      <!-- Trapezium emergency badge — on logo bar -->
+      <span class="badge-emergency-trap" aria-label="အရေးပေါ်" data-i18n-aria="badge.emergency">
+        <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+        <span data-i18n="badge.emergency">အရေးပေါ်</span>
+      </span>
+
+      <div class="header-brand-bar max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
+        <div class="header-brand-center">
+          <img
+            class="site-logo"
+            src="assets/logo.ico"
+            alt="FGLLID Logo"
+            width="108"
+            height="108"
+          />
+          <div class="brand-title-wrap min-w-0">
+            <div class="brand-eyebrow text-[10px] sm:text-xs lg:text-sm font-semibold uppercase tracking-wider leading-tight">
+              <span class="hidden md:inline" data-i18n="brand.gov">ပြည်ထောင်စုသမ္မတမြန်မာနိုင်ငံတော် အစိုးရ | </span
+              ><span data-i18n="brand.ministry">အလုပ်သမားဝန်ကြီးဌာန</span>
+            </div>
+            <h1 class="brand-title text-sm sm:text-lg lg:text-2xl font-bold leading-snug" data-i18n="brand.dept">
+              အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
+            </h1>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden header-menu-btn p-2 focus:outline-none"
+          aria-expanded="false"
+          aria-label="မီနူး ဖွင့်/ပိတ်"
+          data-i18n-aria="menu.toggle"
+        >
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div class="nav-under-logo max-w-7xl mx-auto px-3 sm:px-4 pb-2.5 hidden lg:block">
+        <nav class="primary-nav-boxed font-medium" aria-label="Primary">
+          <a href="#home" class="active" data-i18n="nav.home">ပင်မ</a>
+          <a href="#about" data-i18n="nav.about">အကြောင်း</a>
+          <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
+          <a href="#laws" data-i18n="nav.laws">ဥပဒေ</a>
+          <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
+          <a href="#offices" data-i18n="nav.offices">ရုံးများ</a>
+          <a href="#admin" data-i18n="nav.admin">Admin</a>
+          <a href="#news" data-i18n="nav.news">သတင်း</a>
+        </nav>
+      </div>
+
+      <div
+        id="mobile-nav"
+        class="hidden lg:hidden bg-navy-900 text-white px-4 pt-2 pb-4 space-y-0 border-t border-navy-800"
+      >
+        <a href="#home" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.home"
+          >ပင်မစာမျက်နှာ</a
+        >
+        <a href="#about" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.about"
+          >ဦးစီးဌာနအကြောင်း</a
+        >
+        <a href="#services" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.services"
+          >ဝန်ဆောင်မှုများ</a
+        >
+        <a href="#laws" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.laws"
+          >ဥပဒေများနှင့် နည်းဥပဒေများ</a
+        >
+        <a href="#complaints" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.complaints"
+          >တိုင်ကြားစာ ပေးပို့ရန်</a
+        >
+        <a href="#offices" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.offices"
+          >တိုင်းနှင့်ပြည်နယ် ရုံးများ</a
+        >
+        <a href="#admin" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.admin">Admin</a>
+        <a href="#news" class="block px-3 py-2 hover:bg-navy-800" data-i18n="nav.m.news">သတင်းများ</a>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <!-- Official announcements ticker -->
+      <div class="bg-white border-b border-slate-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex gap-3 items-center">
+          <span class="shrink-0" id="ticker-label">
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 4h11a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2z" />
+              <path d="M8 8h7M8 12h5" />
+              <circle cx="19" cy="7" r="2.5" fill="currentColor" stroke="none" />
+            </svg>
+            <span data-i18n="ticker.label">အထူးဖော်ပြချက်များ</span>
+          </span>
+          <div id="official-ticker-wrap" class="overflow-hidden flex-1 min-w-0">
+            <div
+              id="official-ticker"
+              class="text-sm text-navy-900 whitespace-nowrap"
+              aria-live="polite"
+            >
+              <span class="mx-5" data-i18n="ticker.loading">တရားဝင် သတင်းများ တင်နေပါသည်…</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO — lb_w classic soft navy -->
+      <section id="home" class="relative home-navy-white py-10 sm:py-14 lg:py-20">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-12 space-y-5 text-left">
+              <div class="max-w-3xl">
+                <h2
+                  class="home-soft-title home-anim home-anim-d1 text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug"
+                  data-i18n-html="home.title"
+                >
+                  ဌာန၏ <span class="accent">ပင်မလုပ်ငန်း</span> တာဝန်များ
+                </h2>
+                <p
+                  class="home-soft-copy home-anim home-anim-d2 text-sm sm:text-base max-w-2xl leading-relaxed mt-4"
+                  data-i18n="home.copy"
+                >
+                  အလုပ်သမားဝန်ကြီးဌာန လက်အောက်ရှိ ဦးစီးဌာနတစ်ခုဖြစ်ပြီး အလုပ်ရှင်နှင့် အလုပ်သမားကြား
+                  ဥပဒေနှင့်အညီ လိုက်နာဆောင်ရွက်စေရန် စနစ်တကျ တာဝန်ယူ ဆောင်ရွက်လျက်ရှိပါသည်။
+                </p>
+                <div class="home-cta home-anim home-anim-d3 flex flex-wrap gap-2 pt-4">
+                  <a href="#complaints" class="classic-btn classic-btn-gold" data-i18n="home.cta.complaint">တိုင်ကြားစာ ပေးပို့ရန်</a>
+                  <a href="#laws" class="classic-btn home-soft-outline" data-i18n="home.cta.laws">ဥပဒေများ လေ့လာရန်</a>
+                </div>
+              </div>
+
+              <!-- Quick links — horizontal row under CTAs -->
+              <div class="home-directory home-directory-row home-anim home-anim-d4 mt-2">
+                <div class="dir-head" data-i18n="home.dir.head">အမြန် လမ်းညွှန်</div>
+                <div class="dir-row">
+                  <a href="tel:1811">
+                    <span class="dir-ico"><i class="fa-solid fa-phone"></i></span>
+                    <span class="dir-text">
+                      <div class="dir-meta" data-i18n="home.dir.hotline.meta">၂၄ နာရီ တိုင်ကြားနိုင်သည့် ဖုန်း</div>
+                      <div class="dir-title" data-i18n="home.dir.hotline.title">ဟော့လိုင်း ၁၈၁၁</div>
+                    </span>
+                  </a>
+                  <a href="#laws">
+                    <span class="dir-ico"><i class="fa-solid fa-scale-balanced"></i></span>
+                    <span class="dir-text">
+                      <div class="dir-meta" data-i18n="home.dir.law.meta">၂၀၁၉ ခုနှစ်</div>
+                      <div class="dir-title" data-i18n="home.dir.law.title">လုပ်ငန်းခွင် ဥပဒေ</div>
+                    </span>
+                  </a>
+                  <a href="#offices">
+                    <span class="dir-ico"><i class="fa-solid fa-building"></i></span>
+                    <span class="dir-text">
+                      <div class="dir-meta" data-i18n="home.dir.office.meta">တိုင်း/ပြည်နယ် ခရိုင်ရုံးများ</div>
+                      <div class="dir-title" data-i18n="home.dir.office.title">ရုံးခွဲ ၁၅ ခုနှင့် ဆက်သွယ်ရန်</div>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== LOWER UI (previous design) ===== -->
+      <div class="lower-ui">
+        <!-- Vision / Mission panels (NSTU-style) -->
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 intro-wrap" id="about">
+          <div class="intro-grid" role="tablist" aria-label="ဌာန မီးမောင်းထိုးပြချက်များ">
+            <button type="button" class="intro-panel active" role="tab" aria-selected="true">
+              <h3>Vision</h3>
+              <p data-i18n="intro.vision">
+                ခေတ်မီပြီး ဘေးအန္တရာယ်ကင်းရှင်းသော၊ အလုပ်သမားအခွင့်အရေး ပြည့်ဝစွာရရှိသည့်
+                စံပြလုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရန်။
+              </p>
+            </button>
+            <button type="button" class="intro-panel" role="tab" aria-selected="false">
+              <h3>Mission</h3>
+              <p data-i18n="intro.mission">
+                အလုပ်ရှင်နှင့် အလုပ်သမားကြား ဥပဒေနှင့်အညီ လိုက်နာဆောင်ရွက်စေရန် စနစ်တကျ
+                စစ်ဆေးကြပ်မတ်ခြင်း။
+              </p>
+            </button>
+            <button type="button" class="intro-panel" role="tab" aria-selected="false">
+              <h3>OSH</h3>
+              <p data-i18n="intro.osh">
+                ၂၀၁၉ ခုနှစ် လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေးဥပဒေအရ
+                ကာကွယ်စောင့်ရှောက်ခြင်း။
+              </p>
+            </button>
+            <button type="button" class="intro-panel" role="tab" aria-selected="false">
+              <h3>Services</h3>
+              <p data-i18n="intro.services">
+                စက်ရုံမှတ်ပုံတင်၊ လုပ်ခ/အလုပ်ချိန် စစ်ဆေးခြင်းနှင့် အငြင်းပွားမှု ညှိနှိုင်းဖြေရှင်းခြင်း။
+              </p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Administration — lb_w classic panels -->
+        <section class="py-12 sm:py-14 max-w-7xl mx-auto px-4" id="admin">
+          <div class="classic-section-head">
+            <span class="classic-label">Administration</span>
+            <h2 data-i18n="admin.head">ဦးဆောင်မှုနှင့် နှုတ်ခွန်းဆက်စကား</h2>
+            <p data-i18n="admin.sub">ညွှန်ကြားရေးမှူးချုပ်နှင့် ဦးစီးဌာန ဦးဆောင်အရာရှိများ</p>
+          </div>
+
+          <div class="admin-top-grid mb-4">
+            <!-- DG portrait — one frame only -->
+            <div class="admin-photo-panel">
+              <div class="dg-frame">
+                <img src="assets/dg.png" alt="ဦးဇော်လင်းထွဋ် — ညွှန်ကြားရေးမှူးချုပ်" />
+              </div>
+            </div>
+
+            <!-- Biography — wider column -->
+            <div class="admin-right">
+              <div class="bio-tabs" role="tablist" aria-label="DG message tabs" data-active="0">
+                <button type="button" class="bio-tab is-active" data-bio="bio" role="tab" aria-selected="true" data-i18n="admin.tab.bio">
+                  Biography
+                </button>
+                <span class="bio-tabs-rule" aria-hidden="true"></span>
+                <button type="button" class="bio-tab" data-bio="greet" role="tab" aria-selected="false" data-i18n="admin.tab.greet">
+                  နှုတ်ခွန်းဆက်
+                </button>
+              </div>
+
+              <div class="bio-pager">
+                <button type="button" class="bio-nav bio-prev" id="bioPrev" aria-label="Previous">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="bio-viewport">
+                  <div class="bio-track" id="bio-track">
+                    <article class="bio-slide is-active" data-bio="bio">
+                      <div class="dg-caption">
+                        <h4 data-i18n="admin.dg.name">ဦးဇော်လင်းထွဋ်</h4>
+                        <p class="dg-caption-role" data-i18n="admin.dg.role">ညွှန်ကြားရေးမှူးချုပ်</p>
+                        <p class="dg-caption-org" data-i18n="admin.dg.org">
+                          အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန · အလုပ်သမားဝန်ကြီးဌာန
+                        </p>
+                      </div>
+                      <h4 class="bio-slide-title" data-i18n="admin.bio.title">အတ္ထုပ္ပတ္တိ (Biography)</h4>
+                      <p class="bio-slide-text bio-clamp" data-i18n="admin.bio.text">
+                        အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH)
+                        နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန်
+                        ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍
+                        ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။
+                      </p>
+                      <button
+                        type="button"
+                        class="admin-view-more" data-i18n="admin.viewMore"
+                        data-more-title="ဦးဇော်လင်းထွဋ် · Biography" data-more-title-en="U Zaw Lin Htut · Biography"
+                        data-more-body="ဦးဇော်လင်းထွဋ်သည် အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန၏ ညွှန်ကြားရေးမှူးချုပ်အဖြစ် တာဝန်ထမ်းဆောင်လျက်ရှိပါသည်။ အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH) နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန် ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍ ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေး၊ စက်ရုံ/အလုပ်ရုံများတွင် ဘေးကင်းလုံခြုံသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။" data-more-body-en="U Zaw Lin Htut serves as Director General of FGLLID. He leads labour inspection, OSH, and labour-law compliance, working with State/Region offices to improve public service and safe workplaces."
+                      >
+                        View more ›
+                      </button>
+                    </article>
+                    <article class="bio-slide" data-bio="greet">
+                      <h4 class="bio-slide-title" data-i18n="admin.greet.title">ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်</h4>
+                      <p class="dg-caption-role" style="margin-bottom: 0.65rem" data-i18n="admin.greet.org">အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန</p>
+                      <p class="bio-slide-text bio-clamp" data-i18n="admin.greet.text">
+                        ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ
+                        ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ
+                        စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန်
+                        လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို
+                        ဦးတည်ဆောင်ရွက်ပါသည်။
+                      </p>
+                      <button
+                        type="button"
+                        class="admin-view-more" data-i18n="admin.viewMore"
+                        data-more-title="ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်" data-more-title-en="Message from the Director General"
+                        data-more-body="ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန် လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို ဦးတည်ဆောင်ရွက်ပါသည်။ အလုပ်သမားအခွင့်အရေး ကာကွယ်ရေးနှင့် ဥပဒေလိုက်နာမှု မြှင့်တင်ရေးသည် ကျနော်တို့၏ အဓိက ရည်မှန်းချက် ဖြစ်ပါသည်။" data-more-body-en="Our department inspects factories so workers can work safely under the law. We aim for workplaces built on mutual respect, protecting workers' rights and promoting legal compliance."
+                      >
+                        View more ›
+                      </button>
+                    </article>
+                  </div>
+                </div>
+                <button type="button" class="bio-nav bio-next" id="bioNext" aria-label="Next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deputies: square, light border -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="deputy-row-card">
+              <div class="deputy-photo-frame" aria-hidden="true">
+                <span class="deputy-initials">ဒ</span>
+              </div>
+              <div class="deputy-text">
+                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy1.title">ဒုတိယညွှန်ကြားရေးမှူးချုပ်</h4>
+                <p class="text-xs text-slate-600">Deputy Director General</p>
+                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy1.desc">
+                  စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှု ကူညီဆောင်ရွက်ခြင်း
+                </p>
+                <button
+                  type="button"
+                  class="admin-view-more" data-i18n="admin.viewMore"
+                  data-more-title="ဒုတိယညွှန်ကြားရေးမှူးချုပ်" data-more-title-en="Deputy Director General"
+                  data-more-body="ဒုတိယညွှန်ကြားရေးမှူးချုပ်သည် စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှုတွင် ကူညီဆောင်ရွက်ပါသည်။ တိုင်း/ပြည်နယ် ရုံးများနှင့် ညှိနှိုင်း၍ စက်ရုံ စစ်ဆေးရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး စံချိန်စံညွှန်းများ လိုက်နာမှု မြှင့်တင်ရေးတို့ကို ပံ့ပိုးဆောင်ရွက်ပါသည်။" data-more-body-en="The Deputy Director General supports oversight of inspection and OSH, coordinating with State/Region offices on factory inspection and workplace safety standards."
+                >
+                  View more ›
+                </button>
+              </div>
+            </div>
+            <div class="deputy-row-card">
+              <div class="deputy-photo-frame" aria-hidden="true">
+                <span class="deputy-initials">ည</span>
+              </div>
+              <div class="deputy-text">
+                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy2.title">ညွှန်ကြားရေးမှူး (စီမံ)</h4>
+                <p class="text-xs text-slate-600">Director (Admin)</p>
+                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy2.desc">
+                  စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်း စနစ်တကျ ဆောင်ရွက်ခြင်း
+                </p>
+                <button
+                  type="button"
+                  class="admin-view-more" data-i18n="admin.viewMore"
+                  data-more-title="ညွှန်ကြားရေးမှူး (စီမံ)" data-more-title-en="Director (Admin)"
+                  data-more-body="ညွှန်ကြားရေးမှူး (စီမံ) သည် စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်းများကို စနစ်တကျ ဆောင်ရွက်ပါသည်။ ဝန်ထမ်းရေးရာ၊ ရုံးစနစ်၊ မှတ်တမ်းထိန်းသိမ်းမှုနှင့် အတွင်းရေးရာ ညှိနှိုင်းဆောင်ရွက်မှုများတွင် တာဝန်ယူပါသည်။" data-more-body-en="The Director (Admin) manages administration and office operations, including HR, office systems, records, and internal coordination."
+                >
+                  View more ›
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section class="lu-section" id="services">
+          <div class="lu-container">
+            <div class="lu-head">
+              <span class="lu-eyebrow">Services</span>
+              <h2 data-i18n="svc.head">အဓိက ဆောင်ရွက်ပေးလျက်ရှိသော ဝန်ဆောင်မှုများ</h2>
+              <p data-i18n="svc.sub">ပြည်သူများနှင့် လုပ်ငန်းရှင်များအတွက် စုံစမ်းလျှောက်ထားနိုင်သည့် ဝန်ဆောင်မှုများ</p>
+            </div>
+            <div class="lu-cards-3">
+              <article class="lu-card">
+                <div class="lu-ico"><i class="fa-solid fa-industry"></i></div>
+                <h3 data-i18n="svc1.title">စက်ရုံ/အလုပ်ရုံ အသိအမှတ်ပြုခြင်း</h3>
+                <p data-i18n="svc1.desc">စက်ရုံသစ်များ စတင်ဖွင့်လှစ်ခြင်းနှင့် စက်ပစ္စည်း တပ်ဆင်မှုများကို ဥပဒေနှင့်အညီ မှတ်ပုံတင် စစ်ဆေးပေးခြင်း။</p>
+                <a class="lu-btn lu-btn-outline" href="#services" data-i18n="svc.detail">အသေးစိတ်</a>
+              </article>
+              <article class="lu-card">
+                <div class="lu-ico"><i class="fa-solid fa-coins"></i></div>
+                <h3 data-i18n="svc2.title">အနိမ့်ဆုံးအခကြေးငွေ စစ်ဆေးခြင်း</h3>
+                <p data-i18n="svc2.desc">သတ်မှတ် အနိမ့်ဆုံး အခကြေးငွေ နှုန်းထားများအတိုင်း ပေးချေခြင်း ရှိ/မရှိ ကွင်းဆင်း စစ်ဆေးခြင်း။</p>
+                <a class="lu-btn lu-btn-outline" href="#services" data-i18n="svc.detail">အသေးစိတ်</a>
+              </article>
+              <article class="lu-card">
+                <div class="lu-ico"><i class="fa-solid fa-business-time"></i></div>
+                <h3 data-i18n="svc3.title">အလုပ်ချိန်နှင့် ခွင့်ရက်များ စစ်ဆေးခြင်း</h3>
+                <p data-i18n="svc3.desc">အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။</p>
+                <a class="lu-btn lu-btn-outline" href="#services" data-i18n="svc.detail">အသေးစိတ်</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- History + Structure + Publications -->
+        <section class="lu-section lu-section-alt" id="history">
+          <div class="lu-container">
+            <div class="lu-head">
+              <span class="lu-eyebrow">History &amp; Structure</span>
+              <h2 data-i18n="hist.head">သမိုင်းအကျဉ်းနှင့် ဖွဲ့စည်းပုံ</h2>
+              <p data-i18n="hist.sub">ဦးစီးဌာန၏ နောက်ခံသမိုင်းနှင့် အုပ်ချုပ်မှု ဖွဲ့စည်းပုံ</p>
+            </div>
+            <div class="about-org-layout">
+              <div class="about-org-main">
+                <article class="about-block history-story" id="history-story">
+                  <div class="history-story-head">
+                    <span class="history-eyebrow">Our Journey</span>
+                    <h3 data-i18n="hist.story">သမိုင်းအကျဉ်း</h3>
+                  </div>
+                  <p class="history-lead" data-i18n="hist.p1">
+                    အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာနသည် အလုပ်သမားဝန်ကြီးဌာနအောက်တွင်
+                    စက်ရုံ၊ အလုပ်ရုံများ၏ လုံခြုံရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့်
+                    အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှုများကို စစ်ဆေးကြပ်မတ်ရန် ဖွဲ့စည်းထားသော
+                    ဦးစီးဌာန ဖြစ်ပါသည်။
+                  </p>
+                  <p class="history-lead" data-i18n="hist.p2">
+                    အစဉ်အဆက် ပြဋ္ဌာန်းခဲ့သော အလုပ်ရုံများဆိုင်ရာ ဥပဒေများ၊ လုပ်ငန်းခွင်
+                    ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေး (OSH) ဆိုင်ရာ ပြဋ္ဌာန်းချက်များအရ
+                    ကွင်းဆင်းစစ်ဆေးခြင်း၊ အသိပညာပေးခြင်းနှင့် ပြည်သူ့ဝန်ဆောင်မှုများ
+                    ဆောင်ရွက်လျက်ရှိပါသည်။
+                  </p>
+                  <ol class="history-rail" aria-label="သမိုင်း အဆင့်များ">
+                    <li class="history-step" style="--i: 0">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era1">အစောပိုင်းကာလ</span>
+                        <p data-i18n="hist.era1.desc">အလုပ်ရုံ စစ်ဆေးရေးနှင့် မှတ်ပုံတင် လုပ်ငန်းများ စတင်</p>
+                      </div>
+                    </li>
+                    <li class="history-step" style="--i: 1">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era2">ခေတ်သစ် ပြုပြင်ပြောင်းလဲမှု</span>
+                        <p data-i18n="hist.era2.desc">OSH နှင့် အနည်းဆုံးအခကြေးငွေ စစ်ဆေးမှု တိုးချဲ့</p>
+                      </div>
+                    </li>
+                    <li class="history-step" style="--i: 2">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era3">ယနေ့</span>
+                        <p data-i18n="hist.era3.desc">တိုင်း/ပြည်နယ် ရုံးများနှင့် ချိတ်ဆက်၍ တစ်နိုင်ငံလုံး စစ်ဆေးကြပ်မတ်</p>
+                      </div>
+                    </li>
+                  </ol>
+                </article>
+                <article class="about-block">
+                  <h3 data-i18n="org.head">ဖွဲ့စည်းပုံ</h3>
+                  <div class="org-chart" aria-label="ဦးစီးဌာန ဖွဲ့စည်းပုံ">
+                    <div class="org-node org-node-top" data-i18n="org.dg">ညွှန်ကြားရေးမှူးချုပ်</div>
+                    <div class="org-branch" aria-hidden="true"></div>
+                    <div class="org-row">
+                      <div class="org-node" data-i18n="org.ddg">ဒုတိယညွှန်ကြားရေးမှူးချုပ်</div>
+                      <div class="org-node" data-i18n="org.dir">ညွှန်ကြားရေးမှူး (စီမံ)</div>
+                    </div>
+                    <div class="org-branch org-branch-wide" aria-hidden="true"></div>
+                    <div class="org-row org-row-3">
+                      <div class="org-node org-node-sm" data-i18n="org.insp">စစ်ဆေးရေး</div>
+                      <div class="org-node org-node-sm" data-i18n="org.osh">OSH</div>
+                      <div class="org-node org-node-sm" data-i18n="org.offices">တိုင်း/ပြည်နယ် ရုံးများ</div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <aside class="about-org-aside">
+                <div class="sidebar-panel">
+                  <h3 data-i18n="pubs.head">နောက်ဆုံးထုတ်ဝေမှုများ</h3>
+                  <div class="pubs-scroll-wrap" id="pubs-wrap">
+                    <div class="pubs-viewport" id="pubs-viewport">
+                      <div class="pubs pubs-list" id="pubs-list">
+                        <div class="pub-cover"><strong>01</strong> Labour Force Survey 2015</div>
+                        <div class="pub-cover"><strong>02</strong> အလုပ်သမားအင်အား စစ်တမ်း</div>
+                        <div class="pub-cover"><strong>03</strong> OSH Annual Report</div>
+                        <div class="pub-cover"><strong>04</strong> Factory Inspection Brief</div>
+                        <div class="pub-cover"><strong>05</strong> Minimum Wage Guide</div>
+                        <div class="pub-cover"><strong>06</strong> Child Labour Brief</div>
+                        <div class="pub-cover"><strong>07</strong> Dispute Settlement Notes</div>
+                        <div class="pub-cover"><strong>08</strong> Workplace Safety Leaflet</div>
+                        <div class="pub-cover pub-extra" data-popup="1"><strong>09</strong> Inspection Checklist</div>
+                        <div class="pub-cover pub-extra" data-popup="1"><strong>10</strong> Hotline Guide 1811</div>
+                      </div>
+                    </div>
+                    <button type="button" class="pubs-see-more" id="pubs-see-more" hidden>
+                      <span class="pubs-see-more-text">See more</span>
+                    </button>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <!-- Laws -->
+        <section class="lu-section" id="laws">
+          <div class="lu-container">
+            <div class="lu-head">
+              <span class="lu-eyebrow">Laws</span>
+              <h2 data-i18n="laws.head">အလုပ်သမားဆိုင်ရာ တည်ဆဲဥပဒေများ</h2>
+            </div>
+            <div class="lu-cards-3">
+              <article class="lu-card">
+                <h3 data-i18n="law1.title">၁၉၅၁ ခုနှစ် အလုပ်ရုံများ ဥပဒေ</h3>
+                <p data-i18n="law1.desc">စက်ရုံ/အလုပ်ရုံများ၏ လုံခြုံရေးနှင့် လုပ်ငန်းခွင် စံချိန်စံညွှန်းများ။</p>
+              </article>
+              <article class="lu-card">
+                <h3 data-i18n="law2.title">၂၀၁၉ ခုနှစ် OSH ဥပဒေ</h3>
+                <p data-i18n="law2.desc">လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေးဆိုင်ရာ တာဝန်ဝတ္တရားများ။</p>
+              </article>
+              <article class="lu-card">
+                <h3 data-i18n="law3.title">၂၀၁၃ ခုနှစ် အနည်းဆုံး အခကြေးငွေ ဥပဒေ</h3>
+                <p data-i18n="law3.desc">သတ်မှတ် အနည်းဆုံး အခကြေးငွေနှုန်းထားများ လိုက်နာပေးချေရေး။</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- YouTube / media — cinematic stage above complaints -->
+        <section class="lu-section media-video-section" id="media">
+          <div class="media-stage-bg" aria-hidden="true">
+            <span class="media-stage-orb media-stage-orb-a"></span>
+            <span class="media-stage-orb media-stage-orb-b"></span>
+            <span class="media-stage-grid"></span>
+          </div>
+          <div class="lu-container media-stage">
+            <div class="media-stage-copy">
+              <h2 data-i18n="media.head">အသိပညာပေး ဗီဒီယို</h2>
+              <p class="media-stage-lead" data-i18n="media.sub">
+                YouTube မှ ကြည့်ရှုနိုင်ပါသည် — လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး အသိပညာပေး
+              </p>
+              <ul class="media-stage-points" aria-label="Video topics">
+                <li>
+                  <span class="media-point-ico" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+                  <span data-i18n="media.point1">OSH · လုပ်ငန်းခွင် ဘေးကင်းရေး</span>
+                </li>
+                <li>
+                  <span class="media-point-ico" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
+                  <span data-i18n="media.point2">အလုပ်သမား အခွင့်အရေး အသိပညာပေး</span>
+                </li>
+                <li>
+                  <span class="media-point-ico" aria-hidden="true"><i class="fa-solid fa-building-user"></i></span>
+                  <span data-i18n="media.point3">စက်ရုံ / အလုပ်ရုံ စစ်ဆေးရေး လမ်းညွှန်</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="media-stage-screen">
+              <div class="media-slider" id="media-slider" aria-roledescription="carousel">
+                <button
+                  type="button"
+                  class="media-slider-nav media-slider-prev"
+                  id="mediaPrev"
+                  aria-label="Previous video"
+                  data-i18n-aria="media.prev"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="media-slider-viewport">
+                  <div class="media-slider-track" id="media-slider-track">
+                    <!-- slides filled by JS; data-yt fallbacks below for no-JS -->
+                    <article class="media-slide is-active" data-yt-id="Cwou03Q7n4Y" data-topic-key="media.slide1.topic" data-title-key="media.slide1.title">
+                      <div class="media-screen-frame">
+                        <div class="media-screen-glow" aria-hidden="true"></div>
+                        <div class="media-video-player">
+                          <button type="button" class="media-video-play" aria-label="ဗီဒီယို ဖွင့်ရန်" data-i18n-aria="media.playAria">
+                            <img class="media-video-poster" src="https://i.ytimg.com/vi/Cwou03Q7n4Y/hqdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
+                            <span class="media-video-scrim" aria-hidden="true"></span>
+                            <span class="media-video-play-wrap" aria-hidden="true">
+                              <span class="media-video-ring"></span>
+                              <span class="media-video-ring media-video-ring-2"></span>
+                              <span class="media-video-play-btn"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="media-video-caption">
+                              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                              <span data-i18n="media.caption">YouTube တွင် ကြည့်ရန်</span>
+                            </span>
+                          </button>
+                          <div class="media-video-frame" hidden></div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="media-slide" data-yt-id="71YEw2hBvps" data-topic-key="media.slide2.topic" data-title-key="media.slide2.title">
+                      <div class="media-screen-frame">
+                        <div class="media-screen-glow" aria-hidden="true"></div>
+                        <div class="media-video-player">
+                          <button type="button" class="media-video-play" aria-label="ဗီဒီယို ဖွင့်ရန်" data-i18n-aria="media.playAria">
+                            <img class="media-video-poster" src="https://i.ytimg.com/vi/71YEw2hBvps/hqdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
+                            <span class="media-video-scrim" aria-hidden="true"></span>
+                            <span class="media-video-play-wrap" aria-hidden="true">
+                              <span class="media-video-ring"></span>
+                              <span class="media-video-ring media-video-ring-2"></span>
+                              <span class="media-video-play-btn"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="media-video-caption">
+                              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                              <span data-i18n="media.caption">YouTube တွင် ကြည့်ရန်</span>
+                            </span>
+                          </button>
+                          <div class="media-video-frame" hidden></div>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="media-slide" data-yt-id="_H8ycCy3VqY" data-topic-key="media.slide3.topic" data-title-key="media.slide3.title">
+                      <div class="media-screen-frame">
+                        <div class="media-screen-glow" aria-hidden="true"></div>
+                        <div class="media-video-player">
+                          <button type="button" class="media-video-play" aria-label="ဗီဒီယို ဖွင့်ရန်" data-i18n-aria="media.playAria">
+                            <img class="media-video-poster" src="https://i.ytimg.com/vi/_H8ycCy3VqY/hqdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
+                            <span class="media-video-scrim" aria-hidden="true"></span>
+                            <span class="media-video-play-wrap" aria-hidden="true">
+                              <span class="media-video-ring"></span>
+                              <span class="media-video-ring media-video-ring-2"></span>
+                              <span class="media-video-play-btn"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="media-video-caption">
+                              <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                              <span data-i18n="media.caption">YouTube တွင် ကြည့်ရန်</span>
+                            </span>
+                          </button>
+                          <div class="media-video-frame" hidden></div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="media-slider-nav media-slider-next"
+                  id="mediaNext"
+                  aria-label="Next video"
+                  data-i18n-aria="media.next"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <div class="media-screen-meta">
+                <span class="media-meta-pill media-meta-topic" id="media-meta-topic" data-i18n="media.meta.topic"
+                  >လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေး အသိပညာပေး</span
+                >
+                <span class="media-meta-count" id="media-meta-count" aria-live="polite">1 / 3</span>
+              </div>
+              <div class="media-slider-dots" id="media-slider-dots" role="tablist" aria-label="Video slides"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Complaints band — creative -->
+        <section class="lu-section complaint-band" id="complaints">
+          <div class="lu-container">
+            <div class="complaint-band-panel">
+              <div class="complaint-band-glow" aria-hidden="true"></div>
+              <div class="complaint-band-rings" aria-hidden="true"></div>
+              <div class="complaint-band-copy">
+                <span class="complaint-band-tag" data-i18n="complaint.tag">အရေးပေါ် · Hotline</span>
+                <h2 data-i18n-html="complaint.title">ထိခိုက်နစ်နာမှု <span>တိုင်ကြားစာ</span></h2>
+                <p data-i18n-html="complaint.copy">
+                  လုပ်ငန်းခွင် မတော်တဆမှုနှင့် အလုပ်သမားရေးရာ တိုင်ကြားချက်များကို ပေးပို့နိုင်ပါသည်။
+                  အရေးပေါ် ဟော့လိုင်း <strong>1811</strong>။
+                </p>
+                <div class="lu-cta-row">
+                  <a class="lu-btn lu-btn-gold" href="tel:1811" data-i18n="complaint.hotline">ဟော့လိုင်း ၁၈၁၁</a>
+                  <a class="lu-btn lu-btn-ghost" href="#complaint-qr" data-i18n="complaint.qrBtn">QR ဖြင့် ပေးပို့ရန်</a>
+                </div>
+              </div>
+              <a class="complaint-band-dial" href="tel:1811" aria-label="ဟော့လိုင်း ၁၈၁၁ ခေါ်ဆိုရန်">
+                <span class="complaint-band-pulse" aria-hidden="true"></span>
+                <span class="complaint-band-num">1811</span>
+                <span class="complaint-band-dial-label" data-i18n="complaint.call">ခေါ်ဆိုရန်</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- QR complaint — classic UI (above Offices) -->
+        <section class="complaint-qr-section" id="complaint-qr">
+          <div class="lu-container">
+            <div class="classic-section-head">
+              <span class="classic-label" data-i18n="qr.label">အွန်လိုင်း ဝန်ဆောင်မှု • DEMO</span>
+              <h2 data-i18n="qr.head">တိုင်ကြားစာ ပေးပို့ခြင်း</h2>
+              <p data-i18n="qr.sub">
+                ဤနေရာသည် သရုပ်ပြ (demo) ဖြစ်ပါသည်။ ဤနေရာတွင် ဖြည့်သွင်းသော အချက်အလက်များကို
+                အစိုးရဌာနသို့ တကယ် ပေးပို့မည် မဟုတ်ပါ။
+              </p>
+            </div>
+            <div class="classic-panel-flat complaint-qr-card p-6 sm:p-8 max-w-xl mx-auto text-center">
+              <h3 class="font-bold text-navy-900 text-lg mb-2" data-i18n="qr.cardTitle">ထိခိုက်နစ်နာမှု တိုင်ကြားစာ (QR)</h3>
+              <p class="text-sm text-slate-600 mb-4 leading-relaxed" data-i18n="qr.cardDesc">
+                QR စကင်ဖတ်၍ တိုင်ကြားစာ ပုံစံ ဖွင့်နိုင်ပါသည်၊ ပြည့်ပြီးသား ဒေတာကို Database တွင်
+                ကြည့်ရှုနိုင်သည်။
+              </p>
+              <a id="complaint-qr-link" href="#complaint-qr" class="inline-block">
+                <img
+                  id="complaint-qr-img"
+                  src=""
+                  alt="တိုင်ကြားစာ QR code"
+                  width="200"
+                  height="200"
+                  class="mx-auto border border-slate-300 p-2 bg-white"
+                  style="image-rendering: pixelated"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Offices -->
+        <section class="lu-section" id="offices">
+          <div class="lu-container">
+            <div class="lu-head">
+              <span class="lu-eyebrow">Offices</span>
+              <h2 data-i18n="offices.head">တိုင်းနှင့်ပြည်နယ် ဦးစီးဌာန ရုံးများ</h2>
+            </div>
+            <div class="lu-cards-3">
+              <article class="lu-card">
+                <h3 data-i18n="office1.title">နေပြည်တော် ရုံးချုပ်</h3>
+                <p data-i18n="office1.desc">ရုံးအမှတ် (၅၁)၊ အလုပ်သမားဝန်ကြီးဌာန၊ နေပြည်တော်။ ဖုန်း: ၀၆၇-၃၄၃၀၁၈၄</p>
+              </article>
+              <article class="lu-card">
+                <h3 data-i18n="office2.title">ရန်ကုန်တိုင်းဒေသကြီး</h3>
+                <p data-i18n="office2.desc">စက်ရုံဇုန်များ စစ်ဆေးရေးနှင့် OSH ကြီးကြပ်မှု ဝန်ဆောင်မှုများ။</p>
+              </article>
+              <article class="lu-card">
+                <h3 data-i18n="office3.title">မန္တလေးတိုင်းဒေသကြီး</h3>
+                <p data-i18n="office3.desc">တိုင်းဒေသကြီးအတွင်း အလုပ်ရုံ စစ်ဆေးရေးနှင့် တိုင်ကြားစာ လက်ခံခြင်း။</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- News + sidebar -->
+        <section class="lu-section lu-section-alt" id="news">
+          <div class="lu-container">
+            <div class="news-main-head">
+              <h2 data-i18n="news.head">အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန</h2>
+              <p class="tagline" data-i18n="news.tagline">လုံခြုံကျန်းမာသော လုပ်ငန်းခွင်၊ တက်ကြွထုတ်လုပ်နိုင်သော အလုပ်သမား</p>
+            </div>
+            <div class="news-layout">
+              <div class="news-main-col">
+                <div class="news-carousel-head">
+                  <button type="button" class="news-vnav" id="newsPrev" aria-label="Previous">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </button>
+                  <div class="news-dots" id="newsDots" aria-label="News pages"></div>
+                  <button type="button" class="news-vnav" id="newsNext" aria-label="Next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+                <p class="news-source-line" id="news-source"></p>
+                <div class="news-carousel" id="news-vslider">
+                  <div class="news-carousel-track" id="news-grid">
+                    <p class="news-loading" data-i18n="news.loading">တရားဝင် သတင်းများ ဆွဲယူနေပါသည်…</p>
+                  </div>
+                </div>
+                <div class="text-right" style="margin-top: 0.35rem">
+                  <a
+                    class="lu-btn lu-btn-outline"
+                    id="news-view-all"
+                    href="https://www.mol.gov.mm/category/news-fgllid/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-i18n="news.viewAll">အားလုံးကြည့်ရန်</a
+                  >
+                </div>
+
+                <div class="news-below">
+                  <div class="news-below-head">
+                    <h3 class="news-below-title" data-i18n="news.svcHead">ဝန်ဆောင်မှုများ</h3>
+                    <a class="news-below-more" href="#services" data-i18n="news.svcMore">အားလုံးကြည့်ရန် ›</a>
+                  </div>
+                  <div class="news-services-grid">
+                    <article class="news-svc-card">
+                      <div class="lu-ico"><i class="fa-solid fa-industry"></i></div>
+                      <h4 data-i18n="svc1.title">စက်ရုံ/အလုပ်ရုံ အသိအမှတ်ပြုခြင်း</h4>
+                      <p data-i18n="svc1.desc">စက်ရုံသစ်များ စတင်ဖွင့်လှစ်ခြင်းနှင့် စက်ပစ္စည်း တပ်ဆင်မှုများကို ဥပဒေနှင့်အညီ မှတ်ပုံတင် စစ်ဆေးပေးခြင်း။</p>
+                    </article>
+                    <article class="news-svc-card">
+                      <div class="lu-ico"><i class="fa-solid fa-coins"></i></div>
+                      <h4 data-i18n="svc2.title">အနိမ့်ဆုံးအခကြေးငွေ စစ်ဆေးခြင်း</h4>
+                      <p data-i18n="svc2.desc">သတ်မှတ် အနိမ့်ဆုံး အခကြေးငွေ နှုန်းထားများအတိုင်း ပေးချေခြင်း ရှိ/မရှိ ကွင်းဆင်း စစ်ဆေးခြင်း။</p>
+                    </article>
+                    <article class="news-svc-card">
+                      <div class="lu-ico"><i class="fa-solid fa-business-time"></i></div>
+                      <h4 data-i18n="svc3.title">အလုပ်ချိန်နှင့် ခွင့်ရက်များ စစ်ဆေးခြင်း</h4>
+                      <p data-i18n="svc3.desc">အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <aside class="news-aside">
+                <div class="sidebar-panel">
+                  <h3>Gallery</h3>
+                  <div class="pubs-scroll-wrap" id="gallery-wrap">
+                    <div class="pubs-viewport" id="gallery-viewport">
+                      <div class="pubs pubs-list" id="gallery-list">
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=60')"><strong>OSH</strong> Training</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=60')"><strong>Meeting</strong> Tripartite</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=60')"><strong>Inspect</strong> Factory</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=60')"><strong>Office</strong> Briefing</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=60')"><strong>Labour</strong> Day</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=60')"><strong>Safety</strong> Gear</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=60')"><strong>Site</strong> Visit</div>
+                        <div class="pub-cover gallery-tile" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=400&q=60')"><strong>Workshop</strong> Team</div>
+                        <div class="pub-cover gallery-tile pub-extra" data-popup="1" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=70')"><strong>Field</strong> Check</div>
+                        <div class="pub-cover gallery-tile pub-extra" data-popup="1" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=70')"><strong>Forum</strong> Talk</div>
+                      </div>
+                    </div>
+                    <button type="button" class="pubs-see-more" id="gallery-see-more" hidden>
+                      <span class="pubs-see-more-text">See more</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sidebar-panel">
+                  <h3 data-i18n="aside.features">အထူးဖော်ပြချက်များ</h3>
+                  <div class="feature-popup" id="feature-popup" aria-live="polite">
+                    <div class="feature-popup-card" id="feature-card">
+                      <span class="feature-popup-tag">Highlight</span>
+                      <a href="#services" id="feature-link">ပြည်ပအလုပ်အကိုင် လိုင်စင်ရ အေဂျင်စီများ</a>
+                    </div>
+                    <div class="feature-popup-dots" id="feature-dots" aria-hidden="true"></div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- See-more popup for pubs / gallery -->
+    <div class="see-more-modal" id="see-more-modal" hidden>
+      <div class="see-more-backdrop" data-close="1"></div>
+      <div class="see-more-dialog" role="dialog" aria-modal="true" aria-labelledby="see-more-title">
+        <div class="see-more-head">
+          <h3 id="see-more-title" data-i18n="modal.more">ပိုမိုကြည့်ရန်</h3>
+          <button type="button" class="see-more-x" data-close="1" aria-label="Close" data-i18n-aria="modal.close">×</button>
+        </div>
+        <div class="see-more-body pubs pubs-list" id="see-more-body"></div>
+      </div>
+    </div>
+
+    <footer class="lu-footer">
+      <div class="lu-footer-inner">
+        <div class="ft-cols">
+          <div class="ft-col">
+            <h4 data-i18n="ft.links">အသုံးဝင်သော လင့်ခ်များ</h4>
+            <a href="https://www.mol.gov.mm/" target="_blank" rel="noopener noreferrer" data-i18n="ft.mol">အလုပ်သမားဝန်ကြီးဌာန</a>
+            <a href="https://www.mol.gov.mm/category/news-fgllid/" target="_blank" rel="noopener noreferrer" data-i18n="ft.news">FGLLID သတင်း</a>
+            <a href="#admin" data-i18n="ft.dgOffice">ညွှန်ကြားရေးမှူးချုပ် ရုံး</a>
+            <a href="#history" data-i18n="ft.history">သမိုင်းနှင့် ဖွဲ့စည်းပုံ</a>
+            <h4 class="ft-sub" data-i18n="ft.svc">ဝန်ဆောင်မှုများ</h4>
+            <a href="#services" data-i18n="ft.reg">စက်ရုံ မှတ်ပုံတင်</a>
+            <a href="#services" data-i18n="ft.osh">OSH စစ်ဆေးရေး</a>
+            <a href="#complaints" data-i18n="ft.complaint">တိုင်ကြားစာ</a>
+          </div>
+          <div class="ft-col">
+            <h4 data-i18n="ft.depts">ဌာနခွဲများ</h4>
+            <a href="#offices" data-i18n="ft.offices">တိုင်း/ပြည်နယ် ရုံးများ</a>
+            <a href="#laws" data-i18n="ft.laws">ဥပဒေနှင့် နည်းဥပဒေများ</a>
+            <a href="#news" data-i18n="ft.newsPress">သတင်းနှင့် ထုတ်ပြန်ချက်</a>
+            <h4 class="ft-sub" data-i18n="ft.mgmt">စီမံခန့်ခွဲမှု</h4>
+            <a href="#admin">Administration</a>
+            <a href="admin.html">Data Admin</a>
+            <a href="#offices" data-i18n="ft.hq">ရုံးချုပ် နေပြည်တော်</a>
+          </div>
+          <div class="ft-col">
+            <h4 data-i18n="ft.emergency">အရေးပေါ် ခေါ်ဆိုရန်</h4>
+            <a href="tel:1811" data-i18n-html="ft.hotline">ဟော့လိုင်း <span class="gold">1811</span></a>
+            <a href="tel:0673430184" data-i18n="ft.hqPhone">ရုံးချုပ် ၀၆၇-၃၄၃၀၁၈၄</a>
+            <a href="tel:191" data-i18n="ft.fire">မီးဘေး ၁၉၁</a>
+            <h4 class="ft-sub" data-i18n="ft.info">အချက်အလက်</h4>
+            <a href="#about" data-i18n="ft.vision">Vision / Mission</a>
+            <a href="#laws" data-i18n="ft.oshLaw">OSH ဥပဒေ</a>
+          </div>
+          <div class="ft-col ft-map-col">
+            <h4 data-i18n="ft.map">Map · ရုံးတည်နေရာ</h4>
+            <div class="ft-map">
+              <iframe
+                title="FGLLID Nay Pyi Taw Office Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=96.085%2C19.745%2C96.145%2C19.785&amp;layer=mapnik&amp;marker=19.763%2C96.115"
+              ></iframe>
+            </div>
+            <a
+              class="ft-map-link"
+              href="https://www.openstreetmap.org/?mlat=19.763&amp;mlon=96.115#map=14/19.763/96.115"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="ft.mapOpen">OpenStreetMap တွင် ဖွင့်ရန် ›</a
+            >
+            <p class="ft-addr" data-i18n="ft.addr">ရုံးအမှတ် (၅၁)၊ အလုပ်သမားဝန်ကြီးဌာန၊ နေပြည်တော်</p>
+            <div class="ft-viewer" aria-live="polite">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+              <span data-i18n="ft.viewer">လည်ပတ်သူ</span>
+              <strong id="ft-viewer-count">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="ft-brand-bar">
+          <div class="ft-brand">
+            <div class="ft-logo-tile">
+              <img src="assets/logo.ico" alt="FGLLID Logo" width="56" height="56" />
+            </div>
+            <div class="ft-brand-text">
+              <strong data-i18n="ft.brand">အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန</strong>
+              <span>Factories and General Labour Laws Inspection Department · FGLLID</span>
+            </div>
+          </div>
+          <div class="ft-social">
+            <span class="ft-follow">Follow us</span>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="https://www.mol.gov.mm/" target="_blank" rel="noopener noreferrer" aria-label="Website"
+              ><i class="fa-solid fa-globe"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="ft-bottom">
+          <div class="ft-bottom-links">
+            <a href="#home" data-i18n="nav.home">ပင်မ</a>
+            <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
+            <a href="#news" data-i18n="nav.news">သတင်း</a>
+            <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
+          </div>
+          <div class="ft-copy" data-i18n="ft.copy">© ၂၀၂၆ FGLLID · အလုပ်သမားဝန်ကြီးဌာန · All rights reserved</div>
+        </div>
+      </div>
+    </footer>
+
+    <button type="button" class="ft-top" id="scroll-top" aria-label="အပေါ်သို့" data-i18n-aria="scroll.top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="i18n.js"></script>
+    <script src="js/site-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

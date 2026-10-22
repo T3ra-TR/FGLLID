@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="my">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FGLLID Admin · Site Data</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Noto+Sans+Myanmar:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="ad-top">
+      <div class="ad-top-inner">
+        <div class="ad-brand">
+          <img src="assets/logo.ico" alt="" width="40" height="40" />
+          <div>
+            <strong>FGLLID Admin</strong>
+            <span>Site data · file import → display</span>
+          </div>
+        </div>
+        <div class="ad-top-actions">
+          <a class="ad-btn ad-btn-ghost" href="index.html" target="_blank" rel="noopener"
+            >ကြည့်ရှုရန် ›</a
+          >
+          <button type="button" class="ad-btn" id="btn-export">Export site.json</button>
+          <button type="button" class="ad-btn ad-btn-navy" id="btn-save">Save (local)</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="ad-main">
+      <section class="ad-card ad-drop-card" id="drop-zone">
+        <div class="ad-drop-inner">
+          <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+          <h2>ဖိုင်ထည့်ရုံဖြင့် ဒေတာတင်မည်</h2>
+          <p>
+            <strong>JSON</strong> → site တစ်ခုလုံး အစားထိုး ·
+            <strong>ပုံ (jpg/png/webp)</strong> → Gallery (သို့) DG photo ·
+            <strong>txt/md</strong> → Publications
+          </p>
+          <p class="ad-hint">စာရိုက်စရာမလို — ဖိုင်ချလိုက်ရုံ display အတွက် သိမ်းမည်</p>
+          <input type="file" id="file-input" multiple accept=".json,image/*,.txt,.md,.csv" hidden />
+          <button type="button" class="ad-btn ad-btn-navy" id="btn-pick">ဖိုင် ရွေးရန်</button>
+        </div>
+        <p class="ad-status" id="import-status" aria-live="polite"></p>
+      </section>
+
+      <section class="ad-grid-2">
+        <div class="ad-card">
+          <h3>Hotline</h3>
+          <label>Label <input id="f-hotline-label" type="text" /></label>
+          <label>Primary <input id="f-hotline-primary" type="text" /></label>
+          <label>Office phone <input id="f-hotline-office" type="text" /></label>
+        </div>
+        <div class="ad-card">
+          <h3>DG</h3>
+          <label>Name <input id="f-dg-name" type="text" /></label>
+          <label>Role <input id="f-dg-role" type="text" /></label>
+          <label>Photo URL / data <input id="f-dg-photo" type="text" /></label>
+          <label>Bio <textarea id="f-dg-bio" rows="3"></textarea></label>
+          <div class="ad-photo-preview" id="dg-preview"></div>
+        </div>
+      </section>
+
+      <section class="ad-card">
+        <div class="ad-card-head">
+          <h3>Gallery <span id="gallery-count"></span></h3>
+          <button type="button" class="ad-btn ad-btn-ghost" id="btn-clear-gallery">Clear gallery</button>
+        </div>
+        <div class="ad-thumbs" id="gallery-thumbs"></div>
+      </section>
+
+      <section class="ad-card">
+        <div class="ad-card-head">
+          <h3>Publications <span id="pubs-count"></span></h3>
+        </div>
+        <div class="ad-list" id="pubs-list-admin"></div>
+      </section>
+
+      <section class="ad-card">
+        <div class="ad-card-head">
+          <h3>Raw JSON</h3>
+          <button type="button" class="ad-btn ad-btn-ghost" id="btn-reset">Reset to site.json</button>
+        </div>
+        <textarea id="raw-json" rows="16" spellcheck="false"></textarea>
+        <p class="ad-hint">Export လုပ်ပြီး <code>data/site.json</code> အဖြစ် သိမ်းပါ (static host အတွက်)</p>
+      </section>
+    </main>
+
+    <script src="js/site-data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-22T00:00:00.000Z",
+  "hotline": {
+    "label": "ဟော့လိုင်း",
+    "labelEn": "Hotline",
+    "primary": "1811",
+    "office": "067-3430184",
+    "officeDisplay": "၀၆၇-၃၄၃၀၁၈၄"
+  },
+  "dg": {
+    "name": "ဦးဇော်လင်းထွဋ်",
+    "nameEn": "U Zaw Lin Htut",
+    "role": "ညွှန်ကြားရေးမှူးချုပ်",
+    "roleEn": "Director General",
+    "org": "အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန · အလုပ်သမားဝန်ကြီးဌာန",
+    "photo": "assets/dg.png",
+    "bio": "အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH) နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန် ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍ ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။",
+    "greet": "ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန် လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို ဦးတည်ဆောင်ရွက်ပါသည်။"
+  },
+  "deputies": [
+    {
+      "initial": "ဒ",
+      "title": "ဒုတိယညွှန်ကြားရေးမှူးချုပ်",
+      "titleEn": "Deputy Director General",
+      "desc": "စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှု ကူညီဆောင်ရွက်ခြင်း",
+      "photo": ""
+    },
+    {
+      "initial": "ည",
+      "title": "ညွှန်ကြားရေးမှူး (စီမံ)",
+      "titleEn": "Director (Admin)",
+      "desc": "စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်း စနစ်တကျ ဆောင်ရွက်ခြင်း",
+      "photo": ""
+    }
+  ],
+  "services": [
+    {
+      "title": "စက်ရုံ/အလုပ်ရုံ အသိအမှတ်ပြုခြင်း",
+      "desc": "စက်ရုံသစ်များ စတင်ဖွင့်လှစ်ခြင်းနှင့် စက်ပစ္စည်း တပ်ဆင်မှုများကို ဥပဒေနှင့်အညီ မှတ်ပုံတင် စစ်ဆေးပေးခြင်း။"
+    },
+    {
+      "title": "အနိမ့်ဆုံးအခကြေးငွေ စစ်ဆေးခြင်း",
+      "desc": "သတ်မှတ် အနိမ့်ဆုံး အခကြေးငွေ နှုန်းထားများအတိုင်း ပေးချေခြင်း ရှိ/မရှိ ကွင်းဆင်း စစ်ဆေးခြင်း။"
+    },
+    {
+      "title": "အလုပ်ချိန်နှင့် ခွင့်ရက်များ စစ်ဆေးခြင်း",
+      "desc": "အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။"
+    }
+  ],
+  "offices": [
+    {
+      "title": "နေပြည်တော် ရုံးချုပ်",
+      "desc": "ရုံးအမှတ် (၅၁)၊ အလုပ်သမားဝန်ကြီးဌာန၊ နေပြည်တော်။ ဖုန်း: ၀၆၇-၃၄၃၀၁၈၄"
+    },
+    {
+      "title": "ရန်ကုန်တိုင်းဒေသကြီး",
+      "desc": "စက်ရုံဇုန်များ စစ်ဆေးရေးနှင့် OSH ကြီးကြပ်မှု ဝန်ဆောင်မှုများ။"
+    },
+    {
+      "title": "မန္တလေးတိုင်းဒေသကြီး",
+      "desc": "တိုင်းဒေသကြီးအတွင်း အလုပ်ရုံ စစ်ဆေးရေးနှင့် တိုင်ကြားစာ လက်ခံခြင်း။"
+    }
+  ],
+  "media": [
+    {
+      "ytId": "Cwou03Q7n4Y",
+      "topic": "လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေး အသိပညာပေး",
+      "topicEn": "Occupational safety and health awareness for the workplace"
+    },
+    {
+      "ytId": "71YEw2hBvps",
+      "topic": "အလုပ်သမားများအတွက် လုပ်ငန်းခွင် ဘေးကင်းရေး သင်တန်းနှင့် လမ်းညွှန်",
+      "topicEn": "Workplace safety training and guidance for workers"
+    },
+    {
+      "ytId": "_H8ycCy3VqY",
+      "topic": "လုပ်ငန်းခွင် မတော်တဆမှု လျှော့ချရေးနှင့် ကာကွယ်ရေး အသိပညာပေး",
+      "topicEn": "Preventing and reducing workplace accidents — awareness"
+    }
+  ],
+  "publications": [
+    { "code": "01", "title": "Labour Force Survey 2015" },
+    { "code": "02", "title": "အလုပ်သမားအင်အား စစ်တမ်း" },
+    { "code": "03", "title": "OSH Annual Report" },
+    { "code": "04", "title": "Factory Inspection Brief" },
+    { "code": "05", "title": "Minimum Wage Guide" },
+    { "code": "06", "title": "Child Labour Brief" },
+    { "code": "07", "title": "Dispute Settlement Notes" },
+    { "code": "08", "title": "Workplace Safety Leaflet" },
+    { "code": "09", "title": "Inspection Checklist", "extra": true },
+    { "code": "10", "title": "Hotline Guide 1811", "extra": true }
+  ],
+  "gallery": [
+    {
+      "src": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=60",
+      "label": "OSH Training",
+      "tag": "OSH"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=60",
+      "label": "Tripartite",
+      "tag": "Meeting"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=60",
+      "label": "Factory",
+      "tag": "Inspect"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&q=60",
+      "label": "Briefing",
+      "tag": "Office"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=60",
+      "label": "Day",
+      "tag": "Labour"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=60",
+      "label": "Gear",
+      "tag": "Safety"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=60",
+      "label": "Visit",
+      "tag": "Site"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=400&q=60",
+      "label": "Team",
+      "tag": "Workshop"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=70",
+      "label": "Check",
+      "tag": "Field",
+      "extra": true
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=70",
+      "label": "Talk",
+      "tag": "Forum",
+      "extra": true
+    }
+  ]
+}
