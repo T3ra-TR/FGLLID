@@ -43,6 +43,7 @@
   </head>
   <body class="text-slate-800 antialiased flex flex-col min-h-screen">
     <!-- Top Emergency Header -->
+    <div class="noti-backdrop" id="noti-backdrop" hidden aria-hidden="true"></div>
     <div class="top-utility bg-navy-950 text-white text-xs sm:text-sm py-2 px-4 border-b border-navy-800">
       <div class="max-w-7xl mx-auto topbar-row flex flex-nowrap justify-between items-center gap-2 relative">
         <div class="topbar-cluster flex items-center flex-nowrap gap-x-2 gap-y-1 min-w-0">
@@ -200,46 +201,15 @@
 
       <div class="nav-under-logo max-w-7xl mx-auto px-3 sm:px-4 pb-2.5">
         <div class="nav-under-logo-inner">
-          <nav class="primary-nav-boxed font-medium hidden lg:flex" aria-label="Primary">
-            <a href="#home" class="active" data-i18n="nav.home">ပင်မ</a>
-            <a href="#about" data-i18n="nav.about">အကြောင်း</a>
-            <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
-            <a href="#laws" data-i18n="nav.laws">ဥပဒေ</a>
-            <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
-            <a href="#offices" data-i18n="nav.offices">ရုံးများ</a>
-            <a href="#administration" data-page-link="administration" data-i18n="nav.admin">Administration</a>
-            <a href="#news" data-i18n="nav.news">သတင်း</a>
+          <nav class="primary-nav-boxed font-medium hidden lg:flex" aria-label="Primary" id="primary-nav">
+            <a href="#home" class="active" data-page-link="home" data-i18n="nav.home">ပင်မ</a>
+            <a href="#administration" class="nav-about-btn" data-page-link="administration" data-i18n="nav.about">About</a>
+            <a href="#services" data-page-link="home" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
+            <a href="#laws" data-page-link="home" data-i18n="nav.laws">ဥပဒေ</a>
+            <a href="#complaints" data-page-link="home" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
+            <a href="#offices" data-page-link="home" data-i18n="nav.offices">ရုံးများ</a>
+            <a href="#news" data-page-link="home" data-i18n="nav.news">သတင်း</a>
           </nav>
-          <div class="header-app-downloads" aria-label="App downloads">
-            <a
-              class="app-dl-btn app-dl-android"
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n-aria="app.android.aria"
-              aria-label="Android အက်ပ် ဒေါင်းလုဒ်"
-            >
-              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
-              <span class="app-dl-text">
-                <span class="app-dl-kicker" data-i18n="app.get">Get it on</span>
-                <span class="app-dl-name" data-i18n="app.android">Google Play</span>
-              </span>
-            </a>
-            <a
-              class="app-dl-btn app-dl-ios"
-              href="https://apps.apple.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n-aria="app.ios.aria"
-              aria-label="iOS အက်ပ် ဒေါင်းလုဒ်"
-            >
-              <i class="fa-brands fa-apple" aria-hidden="true"></i>
-              <span class="app-dl-text">
-                <span class="app-dl-kicker" data-i18n="app.download">Download on the</span>
-                <span class="app-dl-name" data-i18n="app.ios">App Store</span>
-              </span>
-            </a>
-          </div>
         </div>
       </div>
 
@@ -247,26 +217,25 @@
         id="mobile-nav"
         class="hidden lg:hidden bg-navy-900 text-white px-4 pt-2 pb-4 space-y-0 border-t border-navy-800"
       >
-        <a href="#home" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.home"
+        <a href="#home" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.home"
           >ပင်မစာမျက်နှာ</a
         >
-        <a href="#about" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.about"
-          >ဦးစီးဌာနအကြောင်း</a
+        <a href="#administration" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="administration" data-i18n="nav.m.about"
+          >About · ဦးစီးဌာနအကြောင်း</a
         >
-        <a href="#services" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.services"
+        <a href="#services" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.services"
           >ဝန်ဆောင်မှုများ</a
         >
-        <a href="#laws" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.laws"
+        <a href="#laws" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.laws"
           >ဥပဒေများနှင့် နည်းဥပဒေများ</a
         >
-        <a href="#complaints" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.complaints"
+        <a href="#complaints" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.complaints"
           >တိုင်ကြားစာ ပေးပို့ရန်</a
         >
-        <a href="#offices" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.offices"
+        <a href="#offices" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.offices"
           >တိုင်းနှင့်ပြည်နယ် ရုံးများ</a
         >
-        <a href="#administration" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="administration" data-i18n="nav.admin">Administration</a>
-        <a href="#news" class="block px-3 py-2 hover:bg-navy-800" data-i18n="nav.m.news">သတင်းများ</a>
+        <a href="#news" class="block px-3 py-2 hover:bg-navy-800" data-page-link="home" data-i18n="nav.m.news">သတင်းများ</a>
       </div>
     </header>
 
@@ -325,7 +294,7 @@
                   ဥပဒေနှင့်အညီ လိုက်နာဆောင်ရွက်စေရန် စနစ်တကျ တာဝန်ယူ ဆောင်ရွက်လျက်ရှိပါသည်။
                 </p>
                 <div class="home-cta home-anim home-anim-d3 flex flex-wrap gap-2 pt-4">
-                  <a href="#administration" class="classic-btn classic-btn-gold" data-page-link="administration" data-i18n="home.cta.admin">ဦးဆောင်မှု / ဖွဲ့စည်းပုံ</a>
+                  <a href="#administration" class="classic-btn classic-btn-gold" data-page-link="administration" data-i18n="home.cta.about">About · ဦးဆောင်မှု / ဖွဲ့စည်းပုံ</a>
                   <a href="#complaints" class="classic-btn home-soft-outline" data-i18n="home.cta.complaint">တိုင်ကြားစာ ပေးပို့ရန်</a>
                   <a href="#laws" class="classic-btn home-soft-outline" data-i18n="home.cta.laws">ဥပဒေများ လေ့လာရန်</a>
                 </div>
@@ -800,8 +769,8 @@
                   Biography
                 </button>
                 <span class="bio-tabs-rule" aria-hidden="true"></span>
-                <button type="button" class="bio-tab" data-bio="greet" role="tab" aria-selected="false" data-i18n="admin.tab.svc">
-                  ဝန်ဆောင်မှု
+                <button type="button" class="bio-tab" data-bio="greet" role="tab" aria-selected="false" data-i18n="admin.tab.greet">
+                  နှုတ်ခွန်းဆက်
                 </button>
               </div>
 
@@ -836,23 +805,23 @@
                       </button>
                     </article>
                     <article class="bio-slide" data-bio="greet">
-                      <h4 class="bio-slide-title" data-i18n="svc.head">အဓိက ဆောင်ရွက်ပေးလျက်ရှိသော ဝန်ဆောင်မှုများ</h4>
-                      <p class="dg-caption-role" style="margin-bottom: 0.65rem" data-i18n="svc.sub">ပြည်သူများနှင့် လုပ်ငန်းရှင်များအတွက် စုံစမ်းလျှောက်ထားနိုင်သည့် ဝန်ဆောင်မှုများ</p>
-                      <ul class="admin-svc-list">
-                        <li>
-                          <strong data-i18n="svc1.title">စက်ရုံ/အလုပ်ရုံ အသိအမှတ်ပြုခြင်း</strong>
-                          <span data-i18n="svc1.desc">စက်ရုံသစ်များ စတင်ဖွင့်လှစ်ခြင်းနှင့် စက်ပစ္စည်း တပ်ဆင်မှုများကို ဥပဒေနှင့်အညီ မှတ်ပုံတင် စစ်ဆေးပေးခြင်း။</span>
-                        </li>
-                        <li>
-                          <strong data-i18n="svc2.title">အနိမ့်ဆုံးအခကြေးငွေ စစ်ဆေးခြင်း</strong>
-                          <span data-i18n="svc2.desc">သတ်မှတ် အနိမ့်ဆုံး အခကြေးငွေ နှုန်းထားများအတိုင်း ပေးချေခြင်း ရှိ/မရှိ ကွင်းဆင်း စစ်ဆေးခြင်း။</span>
-                        </li>
-                        <li>
-                          <strong data-i18n="svc3.title">အလုပ်ချိန်နှင့် ခွင့်ရက်များ စစ်ဆေးခြင်း</strong>
-                          <span data-i18n="svc3.desc">အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။</span>
-                        </li>
-                      </ul>
-                      <a class="admin-view-more" href="#services" data-page-link="home" data-i18n="svc.detail">အသေးစိတ် ›</a>
+                      <h4 class="bio-slide-title" data-i18n="admin.greet.title">ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်</h4>
+                      <p class="dg-caption-role" style="margin-bottom: 0.65rem" data-i18n="admin.greet.org">အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန</p>
+                      <p class="bio-slide-text bio-clamp" data-i18n="admin.greet.text">
+                        ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ
+                        ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ
+                        စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန်
+                        လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို
+                        ဦးတည်ဆောင်ရွက်ပါသည်။
+                      </p>
+                      <button
+                        type="button"
+                        class="admin-view-more" data-i18n="admin.viewMore"
+                        data-more-title="ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်" data-more-title-en="Message from the Director General"
+                        data-more-body="ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန် လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို ဦးတည်ဆောင်ရွက်ပါသည်။ အလုပ်သမားအခွင့်အရေး ကာကွယ်ရေးနှင့် ဥပဒေလိုက်နာမှု မြှင့်တင်ရေးသည် ကျနော်တို့၏ အဓိက ရည်မှန်းချက် ဖြစ်ပါသည်။" data-more-body-en="Our department inspects factories so workers can work safely under the law. We aim for workplaces built on mutual respect, protecting workers' rights and promoting legal compliance."
+                      >
+                        View more ›
+                      </button>
                     </article>
                   </div>
                 </div>
@@ -1095,20 +1064,52 @@
               <span>Factories and General Labour Laws Inspection Department · FGLLID</span>
             </div>
           </div>
-          <div class="ft-social">
-            <span class="ft-follow">Follow us</span>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
-              ><i class="fa-brands fa-youtube"></i
-            ></a>
-            <a href="https://www.mol.gov.mm/" target="_blank" rel="noopener noreferrer" aria-label="Website"
-              ><i class="fa-solid fa-globe"></i
-            ></a>
+          <div class="ft-apps-social">
+            <div class="ft-app-downloads" aria-label="App downloads">
+              <a
+                class="app-dl-btn app-dl-android"
+                href="https://play.google.com/store"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n-aria="app.android.aria"
+                aria-label="Android APK ဒေါင်းလုဒ်"
+              >
+                <i class="fa-brands fa-android" aria-hidden="true"></i>
+                <span class="app-dl-text">
+                  <span class="app-dl-kicker" data-i18n="app.get">Get it on</span>
+                  <span class="app-dl-name" data-i18n="app.android">Android APK</span>
+                </span>
+              </a>
+              <a
+                class="app-dl-btn app-dl-ios"
+                href="https://apps.apple.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n-aria="app.ios.aria"
+                aria-label="iOS အက်ပ် ဒေါင်းလုဒ်"
+              >
+                <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                <span class="app-dl-text">
+                  <span class="app-dl-kicker" data-i18n="app.download">Download on the</span>
+                  <span class="app-dl-name" data-i18n="app.ios">App Store</span>
+                </span>
+              </a>
+            </div>
+            <div class="ft-social">
+              <span class="ft-follow">Follow us</span>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.mol.gov.mm/" target="_blank" rel="noopener noreferrer" aria-label="Website"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
           </div>
         </div>
 

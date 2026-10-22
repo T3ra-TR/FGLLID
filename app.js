@@ -41,6 +41,7 @@
   const ADMIN_HASHES = new Set([
     "administration",
     "admin",
+    "about",
     "history",
     "org",
     "leadership",
@@ -67,6 +68,14 @@
       else el.setAttribute("hidden", "");
     });
     document.body.dataset.page = page;
+    document.querySelectorAll("#primary-nav a, #mobile-nav a").forEach((a) => {
+      const linkPage = a.getAttribute("data-page-link");
+      const isAbout = linkPage === "administration";
+      const on =
+        (page === "administration" && isAbout) ||
+        (page === "home" && linkPage === "home" && a.getAttribute("href") === "#home");
+      a.classList.toggle("active", Boolean(on));
+    });
     if (anchor) {
       window.setTimeout(() => {
         document.querySelector(anchor)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -205,10 +214,17 @@
     if (notiDot) notiDot.classList.toggle("is-off", unread === 0);
   }
 
+  const notiBackdrop = document.getElementById("noti-backdrop");
+
   function openNoti(open) {
     if (!notiPanel || !notiBtn) return;
     notiPanel.hidden = !open;
     notiBtn.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("noti-open", open);
+    if (notiBackdrop) {
+      notiBackdrop.hidden = !open;
+      notiBackdrop.setAttribute("aria-hidden", String(!open));
+    }
     if (open) {
       notiPanel.style.animation = "none";
       void notiPanel.offsetWidth;
@@ -231,7 +247,11 @@
     syncNotiDot();
   });
   notiPanel?.addEventListener("click", (e) => e.stopPropagation());
-  document.addEventListener("click", () => openNoti(false));
+  notiBackdrop?.addEventListener("click", () => openNoti(false));
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#noti-btn, #noti-panel")) return;
+    openNoti(false);
+  });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") openNoti(false);
   });

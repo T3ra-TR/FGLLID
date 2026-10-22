@@ -1076,6 +1076,15 @@ body.is-en .home-soft-title {
 .nav-under-logo .primary-nav-boxed a:last-child { border-right: none; }
 .nav-under-logo .primary-nav-boxed a:hover,
 .nav-under-logo .primary-nav-boxed a.active { background: #1e40af; color: #fff; }
+.nav-under-logo .primary-nav-boxed a.nav-about-btn {
+  font-weight: 700;
+  background: rgba(30, 64, 175, 0.06);
+}
+.nav-under-logo .primary-nav-boxed a.nav-about-btn.active,
+.nav-under-logo .primary-nav-boxed a.nav-about-btn:hover {
+  background: #1e40af;
+  color: #fff;
+}
 
 /* App download badges under logo bar */
 .header-app-downloads {
@@ -2603,6 +2612,9 @@ body.is-en .home-soft-title {
 
 /* —— Top utility: original dark navy —— */
 .top-utility {
+  position: relative;
+  z-index: 70;
+  overflow: visible;
   background: #1e3a8a;
   color: #fff;
   border-bottom: 1px solid #2563eb;
@@ -2781,24 +2793,71 @@ body.is-en .home-soft-title {
   100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
 }
 
-.topbar-noti-wrap { position: relative; }
+.topbar-row,
+.topbar-actions,
+.topbar-noti-wrap {
+  overflow: visible;
+}
+.topbar-noti-wrap {
+  position: relative;
+  z-index: 90;
+  flex-shrink: 0;
+}
 .noti-panel {
   position: absolute;
   right: 0;
   top: calc(100% + 0.55rem);
   width: min(340px, calc(100vw - 1.5rem));
-  z-index: 80;
+  z-index: 100;
   background: #fff;
   border: 1px solid #c5d6ea;
   box-shadow: 0 20px 48px -18px rgba(30, 58, 138, 0.45);
   overflow: hidden;
   transform-origin: top right;
   animation: notiPop 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+  max-height: min(70vh, 420px);
+  display: flex;
+  flex-direction: column;
 }
 .noti-panel[hidden] { display: none !important; }
 @keyframes notiPop {
   from { opacity: 0; transform: translateY(-8px) scale(0.94); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* Mobile: fixed panel so it is not clipped by topbar / header */
+@media (max-width: 768px) {
+  .top-utility {
+    z-index: 80;
+  }
+  .topbar-actions {
+    gap: 0.35rem;
+  }
+  .hotline-card-label {
+    display: none;
+  }
+  .noti-panel {
+    position: fixed;
+    left: 0.65rem;
+    right: 0.65rem;
+    top: 3.1rem;
+    width: auto;
+    max-width: none;
+    max-height: min(72vh, 440px);
+    z-index: 120;
+    transform-origin: top center;
+  }
+}
+.noti-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(15, 23, 42, 0.45);
+}
+@media (max-width: 768px) {
+  body.noti-open .noti-backdrop {
+    display: block;
+  }
 }
 .noti-panel-glow {
   position: absolute;
@@ -2840,6 +2899,13 @@ body.is-en .home-soft-title {
   padding: 0.35rem 0;
   max-height: 280px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+}
+@media (max-width: 768px) {
+  .noti-list {
+    max-height: none;
+  }
 }
 .noti-item {
   display: grid;
@@ -3747,6 +3813,40 @@ body.theme-dark .lu-footer { background: #0a1628; }
   margin-top: 0.2rem;
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.55);
+}
+.ft-apps-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+}
+.ft-app-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+.ft-app-downloads .app-dl-btn {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.ft-app-downloads .app-dl-android i { color: #a3e635; }
+.ft-app-downloads .app-dl-ios i { color: #fff; }
+@media (max-width: 720px) {
+  .ft-apps-social {
+    width: 100%;
+    align-items: stretch;
+  }
+  .ft-app-downloads {
+    justify-content: stretch;
+  }
+  .ft-app-downloads .app-dl-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  .ft-social {
+    justify-content: center;
+  }
 }
 .ft-social {
   display: flex;
