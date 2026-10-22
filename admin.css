@@ -8,7 +8,8 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: Padauk, "Noto Sans Myanmar", sans-serif;
+  font-family: "Noto Sans Myanmar", "Noto Serif Myanmar", Padauk, sans-serif;
+  line-height: 1.7;
   background: #f1f5f9;
   color: var(--deep);
   min-height: 100vh;

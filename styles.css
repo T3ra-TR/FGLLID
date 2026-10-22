@@ -1,10 +1,43 @@
 ﻿body {
-  font-family: 'Padauk', 'Noto Sans Myanmar', 'Inter', sans-serif;
+  font-family: "Noto Sans Myanmar", "Noto Serif Myanmar", Padauk, sans-serif;
   background: linear-gradient(180deg, #f8fafc 0%, #eef3f9 50%, #ffffff 100%);
   background-attachment: fixed;
+  line-height: 1.7;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
 }
 body.is-en {
-  font-family: Inter, 'Padauk', 'Noto Sans Myanmar', sans-serif;
+  font-family: Inter, "Noto Sans Myanmar", sans-serif;
+  line-height: 1.6;
+}
+/* Elegant Myanmar for titles / brand */
+h1, h2, h3, h4,
+.brand-title,
+.brand-eyebrow,
+.lu-head h2,
+.bio-tab,
+.bio-slide-title,
+.dg-caption h4,
+.media-stage-title,
+.complaint-band h2,
+.home-soft-title {
+  font-family: "Noto Serif Myanmar", "Noto Sans Myanmar", Padauk, serif;
+  letter-spacing: 0.01em;
+}
+body.is-en h1,
+body.is-en h2,
+body.is-en h3,
+body.is-en h4,
+body.is-en .brand-title,
+body.is-en .brand-eyebrow,
+body.is-en .lu-head h2,
+body.is-en .bio-tab,
+body.is-en .bio-slide-title,
+body.is-en .dg-caption h4,
+body.is-en .media-stage-title,
+body.is-en .complaint-band h2,
+body.is-en .home-soft-title {
+  font-family: Inter, "Noto Serif Myanmar", sans-serif;
 }
         /* Special-announcements ticker: pause when hovered or touched */
         #official-ticker {
