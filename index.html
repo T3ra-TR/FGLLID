@@ -160,10 +160,11 @@
 
       <div class="header-brand-bar max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
         <div class="header-brand-center">
+          <!-- 1st: ministry seal -->
           <img
-            class="site-logo"
-            src="assets/logo.ico"
-            alt="FGLLID Logo"
+            class="site-logo site-logo-m"
+            src="assets/m_logo.ico"
+            alt="Ministry Logo"
             width="108"
             height="108"
           />
@@ -176,10 +177,11 @@
               အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
             </h1>
           </div>
+          <!-- 2nd: FGLLID triangle logo -->
           <img
-            class="site-logo site-logo-m"
-            src="assets/m_logo.ico"
-            alt="Ministry Logo"
+            class="site-logo site-logo-fg"
+            src="assets/logo.ico"
+            alt="FGLLID Logo"
             width="108"
             height="108"
           />
@@ -196,17 +198,49 @@
         </button>
       </div>
 
-      <div class="nav-under-logo max-w-7xl mx-auto px-3 sm:px-4 pb-2.5 hidden lg:block">
-        <nav class="primary-nav-boxed font-medium" aria-label="Primary">
-          <a href="#home" class="active" data-i18n="nav.home">ပင်မ</a>
-          <a href="#about" data-i18n="nav.about">အကြောင်း</a>
-          <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
-          <a href="#laws" data-i18n="nav.laws">ဥပဒေ</a>
-          <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
-          <a href="#offices" data-i18n="nav.offices">ရုံးများ</a>
-          <a href="#admin" data-i18n="nav.admin">Admin</a>
-          <a href="#news" data-i18n="nav.news">သတင်း</a>
-        </nav>
+      <div class="nav-under-logo max-w-7xl mx-auto px-3 sm:px-4 pb-2.5">
+        <div class="nav-under-logo-inner">
+          <nav class="primary-nav-boxed font-medium hidden lg:flex" aria-label="Primary">
+            <a href="#home" class="active" data-i18n="nav.home">ပင်မ</a>
+            <a href="#about" data-i18n="nav.about">အကြောင်း</a>
+            <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
+            <a href="#laws" data-i18n="nav.laws">ဥပဒေ</a>
+            <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
+            <a href="#offices" data-i18n="nav.offices">ရုံးများ</a>
+            <a href="#administration" data-page-link="administration" data-i18n="nav.admin">Administration</a>
+            <a href="#news" data-i18n="nav.news">သတင်း</a>
+          </nav>
+          <div class="header-app-downloads" aria-label="App downloads">
+            <a
+              class="app-dl-btn app-dl-android"
+              href="https://play.google.com/store"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n-aria="app.android.aria"
+              aria-label="Android အက်ပ် ဒေါင်းလုဒ်"
+            >
+              <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+              <span class="app-dl-text">
+                <span class="app-dl-kicker" data-i18n="app.get">Get it on</span>
+                <span class="app-dl-name" data-i18n="app.android">Google Play</span>
+              </span>
+            </a>
+            <a
+              class="app-dl-btn app-dl-ios"
+              href="https://apps.apple.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n-aria="app.ios.aria"
+              aria-label="iOS အက်ပ် ဒေါင်းလုဒ်"
+            >
+              <i class="fa-brands fa-apple" aria-hidden="true"></i>
+              <span class="app-dl-text">
+                <span class="app-dl-kicker" data-i18n="app.download">Download on the</span>
+                <span class="app-dl-name" data-i18n="app.ios">App Store</span>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <div
@@ -231,12 +265,14 @@
         <a href="#offices" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.m.offices"
           >တိုင်းနှင့်ပြည်နယ် ရုံးများ</a
         >
-        <a href="#admin" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-i18n="nav.admin">Admin</a>
+        <a href="#administration" class="block px-3 py-2 border-b border-navy-800 hover:bg-navy-800" data-page-link="administration" data-i18n="nav.admin">Administration</a>
         <a href="#news" class="block px-3 py-2 hover:bg-navy-800" data-i18n="nav.m.news">သတင်းများ</a>
       </div>
     </header>
 
     <main class="flex-grow">
+      <div id="page-home" class="site-page is-active" data-page="home">
+
       <!-- Official announcements ticker -->
       <div class="bg-white border-b border-slate-300">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex gap-3 items-center">
@@ -289,7 +325,8 @@
                   ဥပဒေနှင့်အညီ လိုက်နာဆောင်ရွက်စေရန် စနစ်တကျ တာဝန်ယူ ဆောင်ရွက်လျက်ရှိပါသည်။
                 </p>
                 <div class="home-cta home-anim home-anim-d3 flex flex-wrap gap-2 pt-4">
-                  <a href="#complaints" class="classic-btn classic-btn-gold" data-i18n="home.cta.complaint">တိုင်ကြားစာ ပေးပို့ရန်</a>
+                  <a href="#administration" class="classic-btn classic-btn-gold" data-page-link="administration" data-i18n="home.cta.admin">ဦးဆောင်မှု / ဖွဲ့စည်းပုံ</a>
+                  <a href="#complaints" class="classic-btn home-soft-outline" data-i18n="home.cta.complaint">တိုင်ကြားစာ ပေးပို့ရန်</a>
                   <a href="#laws" class="classic-btn home-soft-outline" data-i18n="home.cta.laws">ဥပဒေများ လေ့လာရန်</a>
                 </div>
               </div>
@@ -362,137 +399,6 @@
           </div>
         </div>
 
-        <!-- Administration — lb_w classic panels -->
-        <section class="py-12 sm:py-14 max-w-7xl mx-auto px-4" id="admin">
-          <div class="classic-section-head">
-            <span class="classic-label">Administration</span>
-            <h2 data-i18n="admin.head">ဦးဆောင်မှုနှင့် နှုတ်ခွန်းဆက်စကား</h2>
-            <p data-i18n="admin.sub">ညွှန်ကြားရေးမှူးချုပ်နှင့် ဦးစီးဌာန ဦးဆောင်အရာရှိများ</p>
-          </div>
-
-          <div class="admin-top-grid mb-4">
-            <!-- DG portrait — one frame only -->
-            <div class="admin-photo-panel">
-              <div class="dg-frame">
-                <img src="assets/dg.png" alt="ဦးဇော်လင်းထွဋ် — ညွှန်ကြားရေးမှူးချုပ်" />
-              </div>
-            </div>
-
-            <!-- Biography — wider column -->
-            <div class="admin-right">
-              <div class="bio-tabs" role="tablist" aria-label="DG message tabs" data-active="0">
-                <button type="button" class="bio-tab is-active" data-bio="bio" role="tab" aria-selected="true" data-i18n="admin.tab.bio">
-                  Biography
-                </button>
-                <span class="bio-tabs-rule" aria-hidden="true"></span>
-                <button type="button" class="bio-tab" data-bio="greet" role="tab" aria-selected="false" data-i18n="admin.tab.greet">
-                  နှုတ်ခွန်းဆက်
-                </button>
-              </div>
-
-              <div class="bio-pager">
-                <button type="button" class="bio-nav bio-prev" id="bioPrev" aria-label="Previous">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <div class="bio-viewport">
-                  <div class="bio-track" id="bio-track">
-                    <article class="bio-slide is-active" data-bio="bio">
-                      <div class="dg-caption">
-                        <h4 data-i18n="admin.dg.name">ဦးဇော်လင်းထွဋ်</h4>
-                        <p class="dg-caption-role" data-i18n="admin.dg.role">ညွှန်ကြားရေးမှူးချုပ်</p>
-                        <p class="dg-caption-org" data-i18n="admin.dg.org">
-                          အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန · အလုပ်သမားဝန်ကြီးဌာန
-                        </p>
-                      </div>
-                      <h4 class="bio-slide-title" data-i18n="admin.bio.title">အတ္ထုပ္ပတ္တိ (Biography)</h4>
-                      <p class="bio-slide-text bio-clamp" data-i18n="admin.bio.text">
-                        အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH)
-                        နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန်
-                        ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍
-                        ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။
-                      </p>
-                      <button
-                        type="button"
-                        class="admin-view-more" data-i18n="admin.viewMore"
-                        data-more-title="ဦးဇော်လင်းထွဋ် · Biography" data-more-title-en="U Zaw Lin Htut · Biography"
-                        data-more-body="ဦးဇော်လင်းထွဋ်သည် အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန၏ ညွှန်ကြားရေးမှူးချုပ်အဖြစ် တာဝန်ထမ်းဆောင်လျက်ရှိပါသည်။ အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH) နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန် ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍ ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေး၊ စက်ရုံ/အလုပ်ရုံများတွင် ဘေးကင်းလုံခြုံသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။" data-more-body-en="U Zaw Lin Htut serves as Director General of FGLLID. He leads labour inspection, OSH, and labour-law compliance, working with State/Region offices to improve public service and safe workplaces."
-                      >
-                        View more ›
-                      </button>
-                    </article>
-                    <article class="bio-slide" data-bio="greet">
-                      <h4 class="bio-slide-title" data-i18n="admin.greet.title">ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်</h4>
-                      <p class="dg-caption-role" style="margin-bottom: 0.65rem" data-i18n="admin.greet.org">အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန</p>
-                      <p class="bio-slide-text bio-clamp" data-i18n="admin.greet.text">
-                        ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ
-                        ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ
-                        စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန်
-                        လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို
-                        ဦးတည်ဆောင်ရွက်ပါသည်။
-                      </p>
-                      <button
-                        type="button"
-                        class="admin-view-more" data-i18n="admin.viewMore"
-                        data-more-title="ညွှန်ကြားရေးမှူးချုပ်၏ နှုတ်ခွန်းဆက်" data-more-title-en="Message from the Director General"
-                        data-more-body="ကျနော်တို့ ဦးစီးဌာနအနေဖြင့် စက်ရုံ၊ အလုပ်ရုံများတွင် အလုပ်သမားများ ဘေးကင်းလုံခြုံစွာ လုပ်ကိုင်နိုင်ရေးအတွက် ဥပဒေနှင့်အညီ တန်းတူညီမျှ စစ်ဆေးကြပ်မတ် လျက်ရှိပါသည်။ အလုပ်ရှင်နှင့် အလုပ်သမား အပြန်အလှန် လေးစားယုံကြည်မှုရှိသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို ဦးတည်ဆောင်ရွက်ပါသည်။ အလုပ်သမားအခွင့်အရေး ကာကွယ်ရေးနှင့် ဥပဒေလိုက်နာမှု မြှင့်တင်ရေးသည် ကျနော်တို့၏ အဓိက ရည်မှန်းချက် ဖြစ်ပါသည်။" data-more-body-en="Our department inspects factories so workers can work safely under the law. We aim for workplaces built on mutual respect, protecting workers' rights and promoting legal compliance."
-                      >
-                        View more ›
-                      </button>
-                    </article>
-                  </div>
-                </div>
-                <button type="button" class="bio-nav bio-next" id="bioNext" aria-label="Next">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Deputies: square, light border -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="deputy-row-card">
-              <div class="deputy-photo-frame" aria-hidden="true">
-                <span class="deputy-initials">ဒ</span>
-              </div>
-              <div class="deputy-text">
-                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy1.title">ဒုတိယညွှန်ကြားရေးမှူးချုပ်</h4>
-                <p class="text-xs text-slate-600">Deputy Director General</p>
-                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy1.desc">
-                  စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှု ကူညီဆောင်ရွက်ခြင်း
-                </p>
-                <button
-                  type="button"
-                  class="admin-view-more" data-i18n="admin.viewMore"
-                  data-more-title="ဒုတိယညွှန်ကြားရေးမှူးချုပ်" data-more-title-en="Deputy Director General"
-                  data-more-body="ဒုတိယညွှန်ကြားရေးမှူးချုပ်သည် စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှုတွင် ကူညီဆောင်ရွက်ပါသည်။ တိုင်း/ပြည်နယ် ရုံးများနှင့် ညှိနှိုင်း၍ စက်ရုံ စစ်ဆေးရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး စံချိန်စံညွှန်းများ လိုက်နာမှု မြှင့်တင်ရေးတို့ကို ပံ့ပိုးဆောင်ရွက်ပါသည်။" data-more-body-en="The Deputy Director General supports oversight of inspection and OSH, coordinating with State/Region offices on factory inspection and workplace safety standards."
-                >
-                  View more ›
-                </button>
-              </div>
-            </div>
-            <div class="deputy-row-card">
-              <div class="deputy-photo-frame" aria-hidden="true">
-                <span class="deputy-initials">ည</span>
-              </div>
-              <div class="deputy-text">
-                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy2.title">ညွှန်ကြားရေးမှူး (စီမံ)</h4>
-                <p class="text-xs text-slate-600">Director (Admin)</p>
-                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy2.desc">
-                  စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်း စနစ်တကျ ဆောင်ရွက်ခြင်း
-                </p>
-                <button
-                  type="button"
-                  class="admin-view-more" data-i18n="admin.viewMore"
-                  data-more-title="ညွှန်ကြားရေးမှူး (စီမံ)" data-more-title-en="Director (Admin)"
-                  data-more-body="ညွှန်ကြားရေးမှူး (စီမံ) သည် စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်းများကို စနစ်တကျ ဆောင်ရွက်ပါသည်။ ဝန်ထမ်းရေးရာ၊ ရုံးစနစ်၊ မှတ်တမ်းထိန်းသိမ်းမှုနှင့် အတွင်းရေးရာ ညှိနှိုင်းဆောင်ရွက်မှုများတွင် တာဝန်ယူပါသည်။" data-more-body-en="The Director (Admin) manages administration and office operations, including HR, office systems, records, and internal coordination."
-                >
-                  View more ›
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <!-- Services -->
         <section class="lu-section" id="services">
           <div class="lu-container">
@@ -520,106 +426,6 @@
                 <p data-i18n="svc3.desc">အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။</p>
                 <a class="lu-btn lu-btn-outline" href="#services" data-i18n="svc.detail">အသေးစိတ်</a>
               </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- History + Structure + Publications -->
-        <section class="lu-section lu-section-alt" id="history">
-          <div class="lu-container">
-            <div class="lu-head">
-              <span class="lu-eyebrow">History &amp; Structure</span>
-              <h2 data-i18n="hist.head">သမိုင်းအကျဉ်းနှင့် ဖွဲ့စည်းပုံ</h2>
-              <p data-i18n="hist.sub">ဦးစီးဌာန၏ နောက်ခံသမိုင်းနှင့် အုပ်ချုပ်မှု ဖွဲ့စည်းပုံ</p>
-            </div>
-            <div class="about-org-layout">
-              <div class="about-org-main">
-                <article class="about-block history-story" id="history-story">
-                  <div class="history-story-head">
-                    <span class="history-eyebrow">Our Journey</span>
-                    <h3 data-i18n="hist.story">သမိုင်းအကျဉ်း</h3>
-                  </div>
-                  <p class="history-lead" data-i18n="hist.p1">
-                    အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာနသည် အလုပ်သမားဝန်ကြီးဌာနအောက်တွင်
-                    စက်ရုံ၊ အလုပ်ရုံများ၏ လုံခြုံရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့်
-                    အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှုများကို စစ်ဆေးကြပ်မတ်ရန် ဖွဲ့စည်းထားသော
-                    ဦးစီးဌာန ဖြစ်ပါသည်။
-                  </p>
-                  <p class="history-lead" data-i18n="hist.p2">
-                    အစဉ်အဆက် ပြဋ္ဌာန်းခဲ့သော အလုပ်ရုံများဆိုင်ရာ ဥပဒေများ၊ လုပ်ငန်းခွင်
-                    ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေး (OSH) ဆိုင်ရာ ပြဋ္ဌာန်းချက်များအရ
-                    ကွင်းဆင်းစစ်ဆေးခြင်း၊ အသိပညာပေးခြင်းနှင့် ပြည်သူ့ဝန်ဆောင်မှုများ
-                    ဆောင်ရွက်လျက်ရှိပါသည်။
-                  </p>
-                  <ol class="history-rail" aria-label="သမိုင်း အဆင့်များ">
-                    <li class="history-step" style="--i: 0">
-                      <span class="history-dot" aria-hidden="true"></span>
-                      <div class="history-card">
-                        <span class="history-era" data-i18n="hist.era1">အစောပိုင်းကာလ</span>
-                        <p data-i18n="hist.era1.desc">အလုပ်ရုံ စစ်ဆေးရေးနှင့် မှတ်ပုံတင် လုပ်ငန်းများ စတင်</p>
-                      </div>
-                    </li>
-                    <li class="history-step" style="--i: 1">
-                      <span class="history-dot" aria-hidden="true"></span>
-                      <div class="history-card">
-                        <span class="history-era" data-i18n="hist.era2">ခေတ်သစ် ပြုပြင်ပြောင်းလဲမှု</span>
-                        <p data-i18n="hist.era2.desc">OSH နှင့် အနည်းဆုံးအခကြေးငွေ စစ်ဆေးမှု တိုးချဲ့</p>
-                      </div>
-                    </li>
-                    <li class="history-step" style="--i: 2">
-                      <span class="history-dot" aria-hidden="true"></span>
-                      <div class="history-card">
-                        <span class="history-era" data-i18n="hist.era3">ယနေ့</span>
-                        <p data-i18n="hist.era3.desc">တိုင်း/ပြည်နယ် ရုံးများနှင့် ချိတ်ဆက်၍ တစ်နိုင်ငံလုံး စစ်ဆေးကြပ်မတ်</p>
-                      </div>
-                    </li>
-                  </ol>
-                </article>
-                <article class="about-block about-block-org">
-                  <div class="org-chart" aria-label="ဦးစီးဌာန ဖွဲ့စည်းပုံ">
-                    <div class="org-chart-head">
-                      <p class="org-chart-dept mm-title" data-i18n="org.dept">
-                        အလုပ်ရုံနှင့်အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
-                      </p>
-                      <h3 class="org-chart-title mm-subtitle" data-i18n="org.head">ဖွဲ့စည်းပုံ</h3>
-                    </div>
-                    <div class="org-chart-scroll">
-                      <img
-                        class="org-chart-img"
-                        src="assets/org-chart.png"
-                        alt="ညွှန်ကြားရေးမှူးချုပ် → ဒုတိယညွှန်ကြားရေးမှူးချုပ် → စီမံရေးရာ / အလုပ်သမားဥပဒေစစ်ဆေးရေး / အလုပ်ရုံစစ်ဆေးရေး ဌာနခွဲများနှင့် တိုင်းပြည်နယ်ရုံးများ"
-                        width="2000"
-                        height="1545"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <aside class="about-org-aside">
-                <div class="sidebar-panel">
-                  <h3 data-i18n="pubs.head">နောက်ဆုံးထုတ်ဝေမှုများ</h3>
-                  <div class="pubs-scroll-wrap" id="pubs-wrap">
-                    <div class="pubs-viewport" id="pubs-viewport">
-                      <div class="pubs pubs-list" id="pubs-list">
-                        <div class="pub-cover"><strong>01</strong> Labour Force Survey 2015</div>
-                        <div class="pub-cover"><strong>02</strong> အလုပ်သမားအင်အား စစ်တမ်း</div>
-                        <div class="pub-cover"><strong>03</strong> OSH Annual Report</div>
-                        <div class="pub-cover"><strong>04</strong> Factory Inspection Brief</div>
-                        <div class="pub-cover"><strong>05</strong> Minimum Wage Guide</div>
-                        <div class="pub-cover"><strong>06</strong> Child Labour Brief</div>
-                        <div class="pub-cover"><strong>07</strong> Dispute Settlement Notes</div>
-                        <div class="pub-cover"><strong>08</strong> Workplace Safety Leaflet</div>
-                        <div class="pub-cover pub-extra" data-popup="1"><strong>09</strong> Inspection Checklist</div>
-                        <div class="pub-cover pub-extra" data-popup="1"><strong>10</strong> Hotline Guide 1811</div>
-                      </div>
-                    </div>
-                    <button type="button" class="pubs-see-more" id="pubs-see-more" hidden>
-                      <span class="pubs-see-more-text">See more</span>
-                    </button>
-                  </div>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
@@ -960,7 +766,251 @@
             </div>
           </div>
         </section>
-      </div>
+
+      </div><!-- /page-home -->
+
+      <div id="page-administration" class="site-page" data-page="administration" hidden>
+        <div class="admin-page-wrap lower-ui">
+          <div class="lu-container admin-page-bar">
+            <a href="#home" class="admin-page-back" data-page-link="home">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              <span data-i18n="page.backHome">ပင်မစာမျက်နှာသို့</span>
+            </a>
+          </div>
+        <!-- Administration — lb_w classic panels -->
+        <section class="py-12 sm:py-14 max-w-7xl mx-auto px-4" id="admin">
+          <div class="classic-section-head">
+            <span class="classic-label">Administration</span>
+            <h2 data-i18n="admin.head">ဦးဆောင်မှုနှင့် နှုတ်ခွန်းဆက်စကား</h2>
+            <p data-i18n="admin.sub">ညွှန်ကြားရေးမှူးချုပ်နှင့် ဦးစီးဌာန ဦးဆောင်အရာရှိများ</p>
+          </div>
+
+          <div class="admin-top-grid mb-4">
+            <!-- DG portrait — one frame only -->
+            <div class="admin-photo-panel">
+              <div class="dg-frame">
+                <img src="assets/dg.png" alt="ဦးဇော်လင်းထွဋ် — ညွှန်ကြားရေးမှူးချုပ်" />
+              </div>
+            </div>
+
+            <!-- Biography — wider column -->
+            <div class="admin-right">
+              <div class="bio-tabs" role="tablist" aria-label="DG message tabs" data-active="0">
+                <button type="button" class="bio-tab is-active" data-bio="bio" role="tab" aria-selected="true" data-i18n="admin.tab.bio">
+                  Biography
+                </button>
+                <span class="bio-tabs-rule" aria-hidden="true"></span>
+                <button type="button" class="bio-tab" data-bio="greet" role="tab" aria-selected="false" data-i18n="admin.tab.svc">
+                  ဝန်ဆောင်မှု
+                </button>
+              </div>
+
+              <div class="bio-pager">
+                <button type="button" class="bio-nav bio-prev" id="bioPrev" aria-label="Previous">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="bio-viewport">
+                  <div class="bio-track" id="bio-track">
+                    <article class="bio-slide is-active" data-bio="bio">
+                      <div class="dg-caption">
+                        <h4 data-i18n="admin.dg.name">ဦးဇော်လင်းထွဋ်</h4>
+                        <p class="dg-caption-role" data-i18n="admin.dg.role">ညွှန်ကြားရေးမှူးချုပ်</p>
+                        <p class="dg-caption-org" data-i18n="admin.dg.org">
+                          အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန · အလုပ်သမားဝန်ကြီးဌာန
+                        </p>
+                      </div>
+                      <h4 class="bio-slide-title" data-i18n="admin.bio.title">အတ္ထုပ္ပတ္တိ (Biography)</h4>
+                      <p class="bio-slide-text bio-clamp" data-i18n="admin.bio.text">
+                        အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH)
+                        နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန်
+                        ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍
+                        ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။
+                      </p>
+                      <button
+                        type="button"
+                        class="admin-view-more" data-i18n="admin.viewMore"
+                        data-more-title="ဦးဇော်လင်းထွဋ် · Biography" data-more-title-en="U Zaw Lin Htut · Biography"
+                        data-more-body="ဦးဇော်လင်းထွဋ်သည် အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန၏ ညွှန်ကြားရေးမှူးချုပ်အဖြစ် တာဝန်ထမ်းဆောင်လျက်ရှိပါသည်။ အလုပ်သမားရေးရာ စစ်ဆေးကြပ်မတ်မှု၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး (OSH) နှင့် အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှု မြှင့်တင်ရေးတို့တွင် ဦးဆောင်တာဝန် ယူဆောင်ရွက်လျက်ရှိပါသည်။ တိုင်း/ပြည်နယ် ရုံးခွဲများနှင့် ညှိနှိုင်း၍ ပြည်သူ့ဝန်ဆောင်မှု ပိုမိုကောင်းမွန်ရေး၊ စက်ရုံ/အလုပ်ရုံများတွင် ဘေးကင်းလုံခြုံသော လုပ်ငန်းခွင် ပတ်ဝန်းကျင် တည်ဆောက်ရေးကို အလေးထား ဆောင်ရွက်ပါသည်။" data-more-body-en="U Zaw Lin Htut serves as Director General of FGLLID. He leads labour inspection, OSH, and labour-law compliance, working with State/Region offices to improve public service and safe workplaces."
+                      >
+                        View more ›
+                      </button>
+                    </article>
+                    <article class="bio-slide" data-bio="greet">
+                      <h4 class="bio-slide-title" data-i18n="svc.head">အဓိက ဆောင်ရွက်ပေးလျက်ရှိသော ဝန်ဆောင်မှုများ</h4>
+                      <p class="dg-caption-role" style="margin-bottom: 0.65rem" data-i18n="svc.sub">ပြည်သူများနှင့် လုပ်ငန်းရှင်များအတွက် စုံစမ်းလျှောက်ထားနိုင်သည့် ဝန်ဆောင်မှုများ</p>
+                      <ul class="admin-svc-list">
+                        <li>
+                          <strong data-i18n="svc1.title">စက်ရုံ/အလုပ်ရုံ အသိအမှတ်ပြုခြင်း</strong>
+                          <span data-i18n="svc1.desc">စက်ရုံသစ်များ စတင်ဖွင့်လှစ်ခြင်းနှင့် စက်ပစ္စည်း တပ်ဆင်မှုများကို ဥပဒေနှင့်အညီ မှတ်ပုံတင် စစ်ဆေးပေးခြင်း။</span>
+                        </li>
+                        <li>
+                          <strong data-i18n="svc2.title">အနိမ့်ဆုံးအခကြေးငွေ စစ်ဆေးခြင်း</strong>
+                          <span data-i18n="svc2.desc">သတ်မှတ် အနိမ့်ဆုံး အခကြေးငွေ နှုန်းထားများအတိုင်း ပေးချေခြင်း ရှိ/မရှိ ကွင်းဆင်း စစ်ဆေးခြင်း။</span>
+                        </li>
+                        <li>
+                          <strong data-i18n="svc3.title">အလုပ်ချိန်နှင့် ခွင့်ရက်များ စစ်ဆေးခြင်း</strong>
+                          <span data-i18n="svc3.desc">အလုပ်ချိန် သတ်မှတ်ချက်နှင့် ခွင့်ရက်များ မှန်ကန်စွာ ခံစားခွင့်ပေးရေး ကြပ်မတ်ခြင်း။</span>
+                        </li>
+                      </ul>
+                      <a class="admin-view-more" href="#services" data-page-link="home" data-i18n="svc.detail">အသေးစိတ် ›</a>
+                    </article>
+                  </div>
+                </div>
+                <button type="button" class="bio-nav bio-next" id="bioNext" aria-label="Next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deputies: square, light border -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="deputy-row-card">
+              <div class="deputy-photo-frame" aria-hidden="true">
+                <span class="deputy-initials">ဒ</span>
+              </div>
+              <div class="deputy-text">
+                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy1.title">ဒုတိယညွှန်ကြားရေးမှူးချုပ်</h4>
+                <p class="text-xs text-slate-600">Deputy Director General</p>
+                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy1.desc">
+                  စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှု ကူညီဆောင်ရွက်ခြင်း
+                </p>
+                <button
+                  type="button"
+                  class="admin-view-more" data-i18n="admin.viewMore"
+                  data-more-title="ဒုတိယညွှန်ကြားရေးမှူးချုပ်" data-more-title-en="Deputy Director General"
+                  data-more-body="ဒုတိယညွှန်ကြားရေးမှူးချုပ်သည် စစ်ဆေးရေးနှင့် OSH ကဏ္ဍ ကြီးကြပ်မှုတွင် ကူညီဆောင်ရွက်ပါသည်။ တိုင်း/ပြည်နယ် ရုံးများနှင့် ညှိနှိုင်း၍ စက်ရုံ စစ်ဆေးရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေး စံချိန်စံညွှန်းများ လိုက်နာမှု မြှင့်တင်ရေးတို့ကို ပံ့ပိုးဆောင်ရွက်ပါသည်။" data-more-body-en="The Deputy Director General supports oversight of inspection and OSH, coordinating with State/Region offices on factory inspection and workplace safety standards."
+                >
+                  View more ›
+                </button>
+              </div>
+            </div>
+            <div class="deputy-row-card">
+              <div class="deputy-photo-frame" aria-hidden="true">
+                <span class="deputy-initials">ည</span>
+              </div>
+              <div class="deputy-text">
+                <h4 class="font-bold text-navy-900 text-sm mb-1" data-i18n="deputy2.title">ညွှန်ကြားရေးမှူး (စီမံ)</h4>
+                <p class="text-xs text-slate-600">Director (Admin)</p>
+                <p class="text-[11px] text-slate-500 mt-1.5 leading-relaxed" data-i18n="deputy2.desc">
+                  စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်း စနစ်တကျ ဆောင်ရွက်ခြင်း
+                </p>
+                <button
+                  type="button"
+                  class="admin-view-more" data-i18n="admin.viewMore"
+                  data-more-title="ညွှန်ကြားရေးမှူး (စီမံ)" data-more-title-en="Director (Admin)"
+                  data-more-body="ညွှန်ကြားရေးမှူး (စီမံ) သည် စီမံခန့်ခွဲရေးနှင့် ရုံးလုပ်ငန်းများကို စနစ်တကျ ဆောင်ရွက်ပါသည်။ ဝန်ထမ်းရေးရာ၊ ရုံးစနစ်၊ မှတ်တမ်းထိန်းသိမ်းမှုနှင့် အတွင်းရေးရာ ညှိနှိုင်းဆောင်ရွက်မှုများတွင် တာဝန်ယူပါသည်။" data-more-body-en="The Director (Admin) manages administration and office operations, including HR, office systems, records, and internal coordination."
+                >
+                  View more ›
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- History + Structure + Publications -->
+        <section class="lu-section lu-section-alt" id="history">
+          <div class="lu-container">
+            <div class="lu-head">
+              <span class="lu-eyebrow">History &amp; Structure</span>
+              <h2 data-i18n="hist.head">သမိုင်းအကျဉ်းနှင့် ဖွဲ့စည်းပုံ</h2>
+              <p data-i18n="hist.sub">ဦးစီးဌာန၏ နောက်ခံသမိုင်းနှင့် အုပ်ချုပ်မှု ဖွဲ့စည်းပုံ</p>
+            </div>
+            <div class="about-org-layout">
+              <div class="about-org-main">
+                <article class="about-block history-story" id="history-story">
+                  <div class="history-story-head">
+                    <span class="history-eyebrow">Our Journey</span>
+                    <h3 data-i18n="hist.story">သမိုင်းအကျဉ်း</h3>
+                  </div>
+                  <p class="history-lead" data-i18n="hist.p1">
+                    အလုပ်ရုံနှင့် အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာနသည် အလုပ်သမားဝန်ကြီးဌာနအောက်တွင်
+                    စက်ရုံ၊ အလုပ်ရုံများ၏ လုံခြုံရေး၊ လုပ်ငန်းခွင် ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့်
+                    အလုပ်သမားဥပဒေ လိုက်နာဆောင်ရွက်မှုများကို စစ်ဆေးကြပ်မတ်ရန် ဖွဲ့စည်းထားသော
+                    ဦးစီးဌာန ဖြစ်ပါသည်။
+                  </p>
+                  <p class="history-lead" data-i18n="hist.p2">
+                    အစဉ်အဆက် ပြဋ္ဌာန်းခဲ့သော အလုပ်ရုံများဆိုင်ရာ ဥပဒေများ၊ လုပ်ငန်းခွင်
+                    ဘေးအန္တရာယ်ကင်းရှင်းရေးနှင့် ကျန်းမာရေး (OSH) ဆိုင်ရာ ပြဋ္ဌာန်းချက်များအရ
+                    ကွင်းဆင်းစစ်ဆေးခြင်း၊ အသိပညာပေးခြင်းနှင့် ပြည်သူ့ဝန်ဆောင်မှုများ
+                    ဆောင်ရွက်လျက်ရှိပါသည်။
+                  </p>
+                  <ol class="history-rail" aria-label="သမိုင်း အဆင့်များ">
+                    <li class="history-step" style="--i: 0">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era1">အစောပိုင်းကာလ</span>
+                        <p data-i18n="hist.era1.desc">အလုပ်ရုံ စစ်ဆေးရေးနှင့် မှတ်ပုံတင် လုပ်ငန်းများ စတင်</p>
+                      </div>
+                    </li>
+                    <li class="history-step" style="--i: 1">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era2">ခေတ်သစ် ပြုပြင်ပြောင်းလဲမှု</span>
+                        <p data-i18n="hist.era2.desc">OSH နှင့် အနည်းဆုံးအခကြေးငွေ စစ်ဆေးမှု တိုးချဲ့</p>
+                      </div>
+                    </li>
+                    <li class="history-step" style="--i: 2">
+                      <span class="history-dot" aria-hidden="true"></span>
+                      <div class="history-card">
+                        <span class="history-era" data-i18n="hist.era3">ယနေ့</span>
+                        <p data-i18n="hist.era3.desc">တိုင်း/ပြည်နယ် ရုံးများနှင့် ချိတ်ဆက်၍ တစ်နိုင်ငံလုံး စစ်ဆေးကြပ်မတ်</p>
+                      </div>
+                    </li>
+                  </ol>
+                </article>
+                <article class="about-block about-block-org">
+                  <div class="org-chart" aria-label="ဦးစီးဌာန ဖွဲ့စည်းပုံ">
+                    <div class="org-chart-head">
+                      <p class="org-chart-dept mm-title" data-i18n="org.dept">
+                        အလုပ်ရုံနှင့်အလုပ်သမားဥပဒေစစ်ဆေးရေးဦးစီးဌာန
+                      </p>
+                      <h3 class="org-chart-title mm-subtitle" data-i18n="org.head">ဖွဲ့စည်းပုံ</h3>
+                    </div>
+                    <div class="org-chart-scroll">
+                      <img
+                        class="org-chart-img"
+                        src="assets/org-chart.png"
+                        alt="ညွှန်ကြားရေးမှူးချုပ် → ဒုတိယညွှန်ကြားရေးမှူးချုပ် → စီမံရေးရာ / အလုပ်သမားဥပဒေစစ်ဆေးရေး / အလုပ်ရုံစစ်ဆေးရေး ဌာနခွဲများနှင့် တိုင်းပြည်နယ်ရုံးများ"
+                        width="2000"
+                        height="1545"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <aside class="about-org-aside">
+                <div class="sidebar-panel">
+                  <h3 data-i18n="pubs.head">နောက်ဆုံးထုတ်ဝေမှုများ</h3>
+                  <div class="pubs-scroll-wrap" id="pubs-wrap">
+                    <div class="pubs-viewport" id="pubs-viewport">
+                      <div class="pubs pubs-list" id="pubs-list">
+                        <div class="pub-cover"><strong>01</strong> Labour Force Survey 2015</div>
+                        <div class="pub-cover"><strong>02</strong> အလုပ်သမားအင်အား စစ်တမ်း</div>
+                        <div class="pub-cover"><strong>03</strong> OSH Annual Report</div>
+                        <div class="pub-cover"><strong>04</strong> Factory Inspection Brief</div>
+                        <div class="pub-cover"><strong>05</strong> Minimum Wage Guide</div>
+                        <div class="pub-cover"><strong>06</strong> Child Labour Brief</div>
+                        <div class="pub-cover"><strong>07</strong> Dispute Settlement Notes</div>
+                        <div class="pub-cover"><strong>08</strong> Workplace Safety Leaflet</div>
+                        <div class="pub-cover pub-extra" data-popup="1"><strong>09</strong> Inspection Checklist</div>
+                        <div class="pub-cover pub-extra" data-popup="1"><strong>10</strong> Hotline Guide 1811</div>
+                      </div>
+                    </div>
+                    <button type="button" class="pubs-see-more" id="pubs-see-more" hidden>
+                      <span class="pubs-see-more-text">See more</span>
+                    </button>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        </div>
+      </div><!-- /page-administration -->
+
     </main>
 
     <!-- See-more popup for pubs / gallery -->
@@ -982,22 +1032,22 @@
             <h4 data-i18n="ft.links">အသုံးဝင်သော လင့်ခ်များ</h4>
             <a href="https://www.mol.gov.mm/" target="_blank" rel="noopener noreferrer" data-i18n="ft.mol">အလုပ်သမားဝန်ကြီးဌာန</a>
             <a href="https://www.mol.gov.mm/category/news-fgllid/" target="_blank" rel="noopener noreferrer" data-i18n="ft.news">FGLLID သတင်း</a>
-            <a href="#admin" data-i18n="ft.dgOffice">ညွှန်ကြားရေးမှူးချုပ် ရုံး</a>
-            <a href="#history" data-i18n="ft.history">သမိုင်းနှင့် ဖွဲ့စည်းပုံ</a>
+            <a href="#administration" data-page-link="administration" data-i18n="ft.dgOffice">ညွှန်ကြားရေးမှူးချုပ် ရုံး</a>
+            <a href="#administration" data-page-link="administration" data-i18n="ft.history">သမိုင်းနှင့် ဖွဲ့စည်းပုံ</a>
             <h4 class="ft-sub" data-i18n="ft.svc">ဝန်ဆောင်မှုများ</h4>
-            <a href="#services" data-i18n="ft.reg">စက်ရုံ မှတ်ပုံတင်</a>
-            <a href="#services" data-i18n="ft.osh">OSH စစ်ဆေးရေး</a>
-            <a href="#complaints" data-i18n="ft.complaint">တိုင်ကြားစာ</a>
+            <a href="#services" data-page-link="home" data-i18n="ft.reg">စက်ရုံ မှတ်ပုံတင်</a>
+            <a href="#services" data-page-link="home" data-i18n="ft.osh">OSH စစ်ဆေးရေး</a>
+            <a href="#complaints" data-page-link="home" data-i18n="ft.complaint">တိုင်ကြားစာ</a>
           </div>
           <div class="ft-col">
             <h4 data-i18n="ft.depts">ဌာနခွဲများ</h4>
-            <a href="#offices" data-i18n="ft.offices">တိုင်း/ပြည်နယ် ရုံးများ</a>
-            <a href="#laws" data-i18n="ft.laws">ဥပဒေနှင့် နည်းဥပဒေများ</a>
-            <a href="#news" data-i18n="ft.newsPress">သတင်းနှင့် ထုတ်ပြန်ချက်</a>
+            <a href="#offices" data-page-link="home" data-i18n="ft.offices">တိုင်း/ပြည်နယ် ရုံးများ</a>
+            <a href="#laws" data-page-link="home" data-i18n="ft.laws">ဥပဒေနှင့် နည်းဥပဒေများ</a>
+            <a href="#news" data-page-link="home" data-i18n="ft.newsPress">သတင်းနှင့် ထုတ်ပြန်ချက်</a>
             <h4 class="ft-sub" data-i18n="ft.mgmt">စီမံခန့်ခွဲမှု</h4>
-            <a href="#admin">Administration</a>
+            <a href="#administration" data-page-link="administration">Administration</a>
             <a href="admin.html">Data Admin</a>
-            <a href="#offices" data-i18n="ft.hq">ရုံးချုပ် နေပြည်တော်</a>
+            <a href="#offices" data-page-link="home" data-i18n="ft.hq">ရုံးချုပ် နေပြည်တော်</a>
           </div>
           <div class="ft-col">
             <h4 data-i18n="ft.emergency">အရေးပေါ် ခေါ်ဆိုရန်</h4>
@@ -1005,8 +1055,8 @@
             <a href="tel:0673430184" data-i18n="ft.hqPhone">ရုံးချုပ် ၀၆၇-၃၄၃၀၁၈၄</a>
             <a href="tel:191" data-i18n="ft.fire">မီးဘေး ၁၉၁</a>
             <h4 class="ft-sub" data-i18n="ft.info">အချက်အလက်</h4>
-            <a href="#about" data-i18n="ft.vision">Vision / Mission</a>
-            <a href="#laws" data-i18n="ft.oshLaw">OSH ဥပဒေ</a>
+            <a href="#about" data-page-link="home" data-i18n="ft.vision">Vision / Mission</a>
+            <a href="#laws" data-page-link="home" data-i18n="ft.oshLaw">OSH ဥပဒေ</a>
           </div>
           <div class="ft-col ft-map-col">
             <h4 data-i18n="ft.map">Map · ရုံးတည်နေရာ</h4>
@@ -1023,7 +1073,8 @@
               href="https://www.openstreetmap.org/?mlat=19.763&amp;mlon=96.115#map=14/19.763/96.115"
               target="_blank"
               rel="noopener noreferrer"
-              data-i18n="ft.mapOpen">OpenStreetMap တွင် ဖွင့်ရန် ›</a
+              data-i18n="ft.mapOpen"
+              >OpenStreetMap တွင် ဖွင့်ရန် ›</a
             >
             <p class="ft-addr" data-i18n="ft.addr">ရုံးအမှတ် (၅၁)၊ အလုပ်သမားဝန်ကြီးဌာန၊ နေပြည်တော်</p>
             <div class="ft-viewer" aria-live="polite">
@@ -1063,10 +1114,10 @@
 
         <div class="ft-bottom">
           <div class="ft-bottom-links">
-            <a href="#home" data-i18n="nav.home">ပင်မ</a>
-            <a href="#services" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
-            <a href="#news" data-i18n="nav.news">သတင်း</a>
-            <a href="#complaints" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
+            <a href="#home" data-page-link="home" data-i18n="nav.home">ပင်မ</a>
+            <a href="#services" data-page-link="home" data-i18n="nav.services">ဝန်ဆောင်မှု</a>
+            <a href="#news" data-page-link="home" data-i18n="nav.news">သတင်း</a>
+            <a href="#complaints" data-page-link="home" data-i18n="nav.complaints">တိုင်ကြားစာ</a>
           </div>
           <div class="ft-copy" data-i18n="ft.copy">© ၂၀၂၆ FGLLID · အလုပ်သမားဝန်ကြီးဌာန · All rights reserved</div>
         </div>

@@ -33,6 +33,70 @@
     });
   }
 
+  /* —— Page views: home vs administration (footer always visible) —— */
+  const pages = {
+    home: document.getElementById("page-home"),
+    administration: document.getElementById("page-administration"),
+  };
+  const ADMIN_HASHES = new Set([
+    "administration",
+    "admin",
+    "history",
+    "org",
+    "leadership",
+  ]);
+
+  function parseHash() {
+    const raw = (location.hash || "#home").replace(/^#/, "").split(/[/?]/)[0];
+    if (ADMIN_HASHES.has(raw)) {
+      return { page: "administration", anchor: raw === "administration" ? "#admin" : `#${raw}` };
+    }
+    return {
+      page: "home",
+      anchor: raw && raw !== "home" ? `#${raw}` : null,
+    };
+  }
+
+  function showPage(name, { scrollTop = true, anchor = null } = {}) {
+    const page = name === "administration" ? "administration" : "home";
+    Object.entries(pages).forEach(([key, el]) => {
+      if (!el) return;
+      const on = key === page;
+      el.classList.toggle("is-active", on);
+      if (on) el.removeAttribute("hidden");
+      else el.setAttribute("hidden", "");
+    });
+    document.body.dataset.page = page;
+    if (anchor) {
+      window.setTimeout(() => {
+        document.querySelector(anchor)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 40);
+    } else if (scrollTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  function applyHashRoute({ scrollTop = true } = {}) {
+    const { page, anchor } = parseHash();
+    showPage(page, { scrollTop: scrollTop && !anchor, anchor });
+  }
+
+  window.addEventListener("hashchange", () => applyHashRoute());
+
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("[data-page-link]");
+    if (!link) return;
+    const page = link.getAttribute("data-page-link");
+    if (!page || !pages[page]) return;
+    const href = link.getAttribute("href") || "";
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
+    if (location.hash === href) applyHashRoute();
+    else location.hash = href;
+  });
+
+  applyHashRoute({ scrollTop: false });
+
   /* —— EN / MM i18n (default: mm) —— */
   const I18N = window.FGLLID_I18N || { defaultLang: "mm", strings: {} };
   const LANG_KEY = "fgllid_lang";
